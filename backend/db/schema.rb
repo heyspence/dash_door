@@ -10,44 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_07_004915) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_07_004836) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "addresses", force: :cascade do |t|
-    t.string "street"
-    t.string "city"
-    t.string "state"
-    t.string "country"
-    t.bigint "postal_code"
-    t.string "additional_info"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
-  end
-
-  create_table "menu_items", force: :cascade do |t|
-    t.string "name", null: false
-    t.float "price", null: false
-    t.bigint "restaurant_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["restaurant_id"], name: "index_menu_items_on_restaurant_id"
-  end
-
-  create_table "restaurants", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.string "phone_number", null: false
+    t.string "phone_number"
     t.string "email", null: false
-    t.string "country", null: false
+    t.string "country"
     t.string "password_digest", null: false
     t.string "session_token", null: false
     t.datetime "created_at", null: false
@@ -56,6 +28,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_07_004915) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
-  add_foreign_key "addresses", "users"
-  add_foreign_key "menu_items", "restaurants"
 end
