@@ -14,6 +14,9 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
+    before_validation :ensure_session_token
+    # before_save :self.email = email.downcase
+
     validates :first_name,
         presence: true,
         length: { in: 3..30 },
@@ -26,7 +29,8 @@ class User < ApplicationRecord
         message: "Name can only contain letters" }
     validates :phone_number,
         length: { is: 10 },
-        format: { with: /\A\+?[1-9]\d{1,14}\z/ }
+        format: { with: /\A\+?[1-9]\d{1,14}\z/ },
+        allow_nil: true
     validates :email,
         uniqueness: true, 
         length: { in: 3..255 }, 
@@ -42,5 +46,26 @@ class User < ApplicationRecord
         uniqueness: true
 
     has_secure_password
-    
+
+    def self.find_by_credentials(email, password)
+        user = User.find_by_email(email)
+        user&.authenticate(password)
+    end
+
+    def reset_session_token!
+        self.session_token = generate_unique_session_token
+        self.save!
+        self.session_token
+    end
+
+    def generate_unique_session_token
+        loop do
+            token = SecureRandom.base64
+            break token unless User.exists?(session_token: token)
+        end
+    end
+
+    def ensure_session_token
+        self.session_token ||= generate_unique_session_token
+    end
 end
