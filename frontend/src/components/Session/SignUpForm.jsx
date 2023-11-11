@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import './SessionModalFrom.css'
+import './SignUpForm.css'
 import { signUp } from '../store/session';
 
-const SessionModalForm = ({ onClose }) => {
+const SignUpForm = ({ onClose }) => {
     const dispatch = useDispatch();
 
     const [firstName, setFirstName] = useState('');
@@ -26,9 +26,9 @@ const SessionModalForm = ({ onClose }) => {
         dispatch(signUp(user))
     }
     return (
-        <div className='session-modal-form'>
+        <div className='sign-up-form'>
             <button onClick={onClose}>X</button>
-            <h2>Sign In or Sign Up</h2>
+            <h2>Sign Up </h2>
             <form onSubmit={submitHandler}>
                 <label htmlFor="first-name">First Name </label>
                 <input id="first-name" type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
@@ -45,13 +45,13 @@ const SessionModalForm = ({ onClose }) => {
                 <label htmlFor="phone-number">Phone Number </label>
                 <input id="phone-number" type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>
 
-                <label htmlFor="password">Password </label>
-                <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-
+                <label htmlFor="new-password">Password </label>
+                <input id="new-password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <p>By tapping “Sign Up” or “Continue with Google, Facebook, or Apple,” you agree to DoorDash’s Terms and Conditions and Privacy Policy.</p>
                 <input type="submit" value="Sign Up" className='button' />
             </form>
         </div>
     )
 }
 
-export default SessionModalForm
+export default SignUpForm;
