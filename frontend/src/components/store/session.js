@@ -3,7 +3,7 @@ const REMOVE_CURRENT_USER = 'session/REMOVE_CURRENT_USER'
 
 const storeCurrentUser = user => {
     if(user)sessionStorage.setItem('currentUser', JSON.stringify(user))
-    else sessionReducer.removeItem('currentUser')
+    else sessionStorage.removeItem('currentUser')
 }
 
 export const signUp = user => async dispatch =>{
@@ -15,7 +15,24 @@ export const signUp = user => async dispatch =>{
     if(res.ok){
         let data = await res.json()
         dispatch({type: SET_CURRENT_USER, user: data.user})
-        storeCurrentUser()
+        storeCurrentUser(data.user.id)
+        console.log(data.user.id)
+    }else{
+        let errors = await res.json();
+        console.log(errors)
+    }
+}
+
+export const signIn = ({email, password}) => async dispatch =>{
+    const res = await fetch(`/api/session`,{
+        headers: {'Content-Type': 'application/json'},
+        method: 'POST',
+        body: JSON.stringify({email, password})
+    })
+    if(res.ok){
+        let data = await res.json()
+        dispatch({type: SET_CURRENT_USER, user: data.user})
+        // storeCurrentUser(data.user.id)
     }else{
         let errors = await res.json();
         console.log(errors)

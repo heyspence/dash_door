@@ -60,17 +60,20 @@ table {
     --primary-white: rgb(255 255 255);
     --secondary-white: rgb(247, 247, 247);
     --primary-black: rgb(25 25 25);
+    --secondary-black: rgb(73 73 73);
 }
 
 .button, button{
     position: relative;
-    width: 80px;
-    height: 40px;
+    width: 78px;
+    height: 34px;
     color: var(--primary-white);
     background-color: var(--primary-red);
     text-decoration: none;
     border-radius: 20px;
-    padding: 9px;
+    font-size: 15px;
+    padding: 0px 7px;
+    white-space: nowrap;
     margin: 5px;
     font-weight: bold;
     border: none;
@@ -83,7 +86,7 @@ table {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--primary-red);
+    background-color: var(--primary-white);
     color: var(--primary-white);
     height: 100%;
     width: 100%;

@@ -4,26 +4,25 @@
     justify-content: flex-end;
     height: 80px;
     color: var(--primary-white);
-    margin: 0 5%;
+    margin: 0 3%;
     z-index: 50;
   }
   
   .main-nav-logo {
     font-family: 'Roboto', sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     letter-spacing: 3px;
     left: 50%;
-    transform: translate(-50%, 0) scaleY(0.9);
+    transform: translate(-50%, 0) scaleY(0.95);
     position: absolute;
     font-weight: 400;
   }
 
   .main-sign-up-button {
-    color: var(--primary-black);
-    background-color: var(--primary-white)
+    color: var(--secondary-black);
+    background-color: var(--primary-white);
   }
 
   .main-sign-up-button:hover {
     background-color: var(--primary-white);
   }
-  
