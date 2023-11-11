@@ -1,26 +1,29 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './SignInForm.css'
-import { signIn } from '../store/session';
+import { signIn, isLoggedIn } from '../store/session';
+import { useHistory } from 'react-router-dom'
 
 const SignInForm = ({ onClose }) => {
     const dispatch = useDispatch();
+    const history = useHistory();
+    const userLoggedIn = useSelector(isLoggedIn)
 
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
-    const [country, setCountry] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
+
+    useEffect(()=>{
+        console.log(userLoggedIn)
+        if(userLoggedIn) {
+            onClose()
+            history.push('/home')
+        }
+    },[userLoggedIn])
 
     const submitHandler = (e) => {
         e.preventDefault();
         let user = {
-            firstName,
-            lastName,
             email,
-            country,
-            phoneNumber,
             password
         }
         dispatch(signIn(user))
@@ -37,7 +40,9 @@ const SignInForm = ({ onClose }) => {
                 <input id="new-password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
 
                 <input type="submit" value="Sign In" className='button' />
-                <p>By continuing with the sign in process, we may send you a one-time verification code via text message to the phone number associated with your account. Message and data rates may apply.</p>
+                <p>By continuing with the sign in process, we may send you 
+                    a one-time verification code via text message to the phone 
+                    number associated with your account. Message and data rates may apply.</p>
             </form>
         </div>
     )
