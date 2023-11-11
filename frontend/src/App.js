@@ -4,6 +4,7 @@ import NavigationBar from "./components/NavigationBar";
 import SplashPage from "./components/SplashPage";
 import { Provider } from 'react-redux';
 import configureStore from "./components/store";
+import Home from "./components/Home";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <BrowserRouter>
           <NavigationBar />
           <Switch>
+            <Route exact path="/home"><Home /></Route>
             <Route path="/"><SplashPage /></Route>
           </Switch>
         </BrowserRouter>

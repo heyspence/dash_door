@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './SignUpForm.css'
-import { signUp } from '../store/session';
+import { isLoggedIn, signUp } from '../store/session';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const SignUpForm = ({ onClose }) => {
     const dispatch = useDispatch();
+    const userLoggedIn = useState(isLoggedIn);
+    const history = useHistory();
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -12,6 +15,13 @@ const SignUpForm = ({ onClose }) => {
     const [country, setCountry] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
+
+    useEffect(()=>{
+        if(userLoggedIn){
+            onClose();
+            history.push('/home')
+        }
+    },[userLoggedIn])
 
     const submitHandler = (e) => {
         e.preventDefault();
