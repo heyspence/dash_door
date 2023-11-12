@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './SignUpForm.css'
-import { isLoggedIn, signUp } from '../store/session';
+import { isLoggedIn, signIn, signUp } from '../store/session';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import Errors from './Errors';
 
 const SignUpForm = ({ onClose }) => {
     const dispatch = useDispatch();
@@ -35,6 +36,15 @@ const SignUpForm = ({ onClose }) => {
         }
         dispatch(signUp(user))
     }
+
+    const signInDemoUser = () =>{
+        let user = {
+            email: "spencer@gmail.com",
+            password: "password"
+        }
+        dispatch(signIn(user))
+    }
+
     return (
         <div className='sign-up-form'>
             <button onClick={onClose}>X</button>
@@ -57,7 +67,11 @@ const SignUpForm = ({ onClose }) => {
 
                 <label htmlFor="new-password">Password </label>
                 <input id="new-password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                <p>By tapping “Sign Up” or “Continue with Google, Facebook, or Apple,” you agree to DoorDash’s Terms and Conditions and Privacy Policy.</p>
+
+                <a onClick={signInDemoUser}>Sign in as demo user</a>
+                <Errors />
+                <p>By tapping “Sign Up” or “Continue with Google, Facebook, or Apple,” you agree
+                    to DoorDash’s Terms and Conditions and Privacy Policy.</p>
                 <input type="submit" value="Sign Up" className='button' />
             </form>
         </div>
