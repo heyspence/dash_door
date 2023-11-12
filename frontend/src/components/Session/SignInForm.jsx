@@ -13,7 +13,6 @@ const SignInForm = ({ onClose }) => {
     const [password, setPassword] = useState('');
 
     useEffect(()=>{
-        console.log(userLoggedIn)
         if(userLoggedIn) {
             onClose()
             history.push('/home')
