@@ -1,11 +1,13 @@
 
 .sign-up-form{
-    width: 450px;
-    height: 570px;
+    max-width: 450px;
+    min-width: 300px;
+    max-height: 85vh;
+    overflow-y: auto;
     background-color: var(--primary-white);
     padding: 25px;
     border-radius: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .sign-up-form button{

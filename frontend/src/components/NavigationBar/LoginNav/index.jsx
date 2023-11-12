@@ -4,17 +4,34 @@ import './LoginNav.css'
 import SignUpForm from "../../Session/SignUpForm";
 import SignInForm from '../../Session/SignInForm'
 import logo from '../../../assets/images/modified-icon.png'
+import { removeErrors } from "../../store/errors";
+import { useDispatch } from "react-redux";
 
 const LoginNav = ({ display }) => {
+    const dispatch = useDispatch();
     const [isSignInOpen, setIsSignInOpen] = useState(false);
     const [isSignUpOpen, setIsSignUpOpen] = useState(false);
     
     if(!display) return null
     
-    const handleSignUpOpen = () => setIsSignUpOpen(true);
-    const handleSignUpClose = () => setIsSignUpOpen(false);
-    const handleSignInOpen = () => setIsSignInOpen(true);
-    const handleSignInClose = () => setIsSignInOpen(false);
+    const handleSignUpOpen = () => {
+        document.body.classList.add('no-scroll')
+        setIsSignUpOpen(true);
+    }
+    const handleSignUpClose = () => {
+        document.body.classList.remove('no-scroll')
+        dispatch(removeErrors());
+        setIsSignUpOpen(false);
+    }
+    const handleSignInOpen = () => {
+        document.body.classList.add('no-scroll')
+        dispatch(removeErrors());
+        setIsSignInOpen(true);
+    }
+    const handleSignInClose = () => {
+        document.body.classList.remove('no-scroll')
+        setIsSignInOpen(false);
+    }
 
     return (
         <div className='main-nav-bar'>

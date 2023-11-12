@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './SignInForm.css'
 import { signIn, isLoggedIn } from '../store/session';
 import { useHistory } from 'react-router-dom'
+import Errors from './Errors';
 
 const SignInForm = ({ onClose }) => {
     const dispatch = useDispatch();
@@ -27,6 +28,15 @@ const SignInForm = ({ onClose }) => {
         }
         dispatch(signIn(user))
     }
+
+    const signInDemoUser = () =>{
+        let user = {
+            email: "spencer@gmail.com",
+            password: "password"
+        }
+        dispatch(signIn(user))
+    }
+
     return (
         <div className='sign-in-form'>
             <button onClick={onClose}>X</button>
@@ -38,10 +48,13 @@ const SignInForm = ({ onClose }) => {
                 <label htmlFor="new-password">Password </label>
                 <input id="new-password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
 
+                <a onClick={signInDemoUser}>Sign in as demo user</a>
+                <Errors />
                 <input type="submit" value="Sign In" className='button' />
                 <p>By continuing with the sign in process, we may send you 
                     a one-time verification code via text message to the phone 
-                    number associated with your account. Message and data rates may apply.</p>
+                    number associated with your account.
+                </p>
             </form>
         </div>
     )
