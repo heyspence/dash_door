@@ -17,7 +17,7 @@ const SignUpForm = ({ onClose }) => {
     const [password, setPassword] = useState('');
 
     useEffect(()=>{
-        if(userLoggedIn){
+        if(!userLoggedIn){
             onClose();
             history.push('/home')
         }
