@@ -17,7 +17,7 @@
     color: var(--primary-gray)
 }
 
-.hamburger-menu:hover{
+.home-nav svg:hover{
     cursor: pointer;
 }
 

@@ -31,7 +31,7 @@ const SignInForm = ({ onClose }) => {
 
     const signInDemoUser = () =>{
         let user = {
-            email: "spencer@gmail.com",
+            email: "demo@dashdoor.com",
             password: "password"
         }
         dispatch(signIn(user))

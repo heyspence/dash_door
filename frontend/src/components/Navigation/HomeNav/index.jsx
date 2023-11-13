@@ -3,7 +3,7 @@ import logo from '../../../assets/images/doordash-logo-red.png'
 import { ReactComponent as CartIcon } from './CartIcon.svg'
 import { ReactComponent as HamburgerMenu } from './HamburgerMenu.svg'
 
-const HomeNav = ({ display, toggleMenu }) => {
+const HomeNav = ({ display, toggleMenu, toggleCart }) => {
     
     if(!display) return null
 
@@ -15,7 +15,7 @@ const HomeNav = ({ display, toggleMenu }) => {
                 <h1>DASHDOOR</h1>
             </div>
             <div className="home-nav-right">
-                <CartIcon />
+                <CartIcon onClick={toggleCart} />
             </div>
         </div>
     )
