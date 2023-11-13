@@ -3,13 +3,24 @@
     top: 0;
     left: 0;
     background-color: var(--primary-white);
-    box-shadow: 10 10 10 10;
     height: 100%;
     min-width: 350px;
     z-index: 10;
     color: var(--primary-black);
     font-weight: bold;
     box-shadow: 5px 0 10px -5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.menu-backdrop{
+    position: fixed; /* Or absolute, depending on your layout */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: transparent; /* Invisible backdrop */
+    z-index: 5; 
+
 }
 
 .menu-close{
