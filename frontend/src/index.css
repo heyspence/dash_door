@@ -61,6 +61,8 @@ table {
     --secondary-white: rgb(247, 247, 247);
     --primary-black: rgb(25 25 25);
     --secondary-black: rgb(73 73 73);
+    --primary-gray: rgb(73 73 73);
+    --secondary-gray: rgb(247 247 247);
 }
 
 .button, button{

@@ -1,6 +1,18 @@
 class ApplicationController < ActionController::API
-    before_action :snake_case_params
-    
+    include ActionController::RequestForgeryProtection
+    protect_from_forgery with: :exception
+    rescue_from ActionController::InvalidAuthenticityToken, with: :handle_csrf_exception
+    before_action :snake_case_params, :attach_authenticity_token
+
+    def attach_authenticity_token
+        headers['X-CSRF-Token'] = masked_authenticity_token(session)
+    end
+
+
+    def handle_csrf_exception
+        render json: {errors: ["Invalid Authenticity Token"]}, status: 422
+    end
+
     def current_user
         @current_user ||= User.find_by_session_token(session[:session_token])
     end

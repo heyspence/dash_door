@@ -1,3 +1,4 @@
+import csrfFetch from "./csrf";
 import { receiveErrors } from "./errors";
 
 const SET_CURRENT_USER = 'session/SET_CURRENT_USER'
@@ -12,7 +13,7 @@ const selectCurrentUser = state => state?.session ? state.session.user : null;
 export const isLoggedIn = (state) => !!selectCurrentUser(state);
 
 export const signUp = user => async dispatch =>{
-    const res = await fetch(`/api/users`,{
+    const res = await csrfFetch(`/api/users`,{
         headers: {'Content-Type': 'application/json'},
         method: 'POST',
         body: JSON.stringify({user: user})
@@ -21,7 +22,6 @@ export const signUp = user => async dispatch =>{
         let data = await res.json()
         dispatch({type: SET_CURRENT_USER, user: data.user})
         storeCurrentUser(data.user.id)
-        console.log(data.user.id)
     }else{
         let data = await res.json();
         dispatch(receiveErrors(data.errors))
@@ -29,7 +29,7 @@ export const signUp = user => async dispatch =>{
 }
 
 export const signIn = ({email, password}) => async dispatch =>{
-    const res = await fetch(`/api/session`,{
+    const res = await csrfFetch(`/api/session`,{
         headers: {'Content-Type': 'application/json'},
         method: 'POST',
         body: JSON.stringify({email, password})
@@ -46,7 +46,7 @@ export const signIn = ({email, password}) => async dispatch =>{
 }
 
 export const logout = () => async dispatch => {
-    const res = await fetch(`api/session`,{
+    const res = await csrfFetch(`api/session`,{
         method: 'DELETE'
     })
 
