@@ -25,11 +25,11 @@ const LoginNav = ({ display }) => {
     }
     const handleSignInOpen = () => {
         document.body.classList.add('no-scroll')
-        dispatch(removeErrors());
         setIsSignInOpen(true);
     }
     const handleSignInClose = () => {
         document.body.classList.remove('no-scroll')
+        dispatch(removeErrors());
         setIsSignInOpen(false);
     }
 
