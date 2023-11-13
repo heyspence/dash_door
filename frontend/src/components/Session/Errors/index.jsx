@@ -10,7 +10,8 @@ const Errors = () => {
         <div className="errors">
             <ul>
                 {errors && errors.map((error)=>{
-                    return <li key={error}>{error}</li>
+                    if(error === "Password digest can't be blank") return null;
+                    return <li key={error}>{error}</li>;
                 })}
             </ul>
         </div>
