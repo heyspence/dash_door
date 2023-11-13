@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import NavigationBar from "./components/NavigationBar";
+import NavigationBar from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
 import { Provider } from 'react-redux';
 import configureStore from "./components/store";
