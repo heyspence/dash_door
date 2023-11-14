@@ -3,12 +3,14 @@ import splashPageImage from '../../assets/images/splash-main.webp'
 import './SplashPage.css'
 import { useSelector } from 'react-redux';
 import { isLoggedIn } from '../store/session';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 const SplashPage = props => {
-    const userLoggedIn = useSelector(isLoggedIn)
+    const userLoggedIn = useSelector(isLoggedIn);
+    const history = useHistory();
 
-    if(userLoggedIn)return null;
+    if(userLoggedIn) history.push('/home');
     
     const backgroundStyle = {
         backgroundImage: `url(${splashPageImage})`,

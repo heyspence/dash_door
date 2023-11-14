@@ -1,0 +1,19 @@
+.restaurant-index-item{
+    height: 150px;
+    width: 300px;
+    border-radius: 4px;
+    padding: 10px 10px 10px 0px;
+    margin-right: 20px;
+
+}
+
+.restaurant-index-item h3{
+    margin-top: 13px;
+}
+
+.image-placeholder{
+    height: 150px;
+    width: 300px;
+    background-color: var(--primary-red);
+    border-radius: 4px;
+}

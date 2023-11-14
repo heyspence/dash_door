@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import './Home.css'
 import { isLoggedIn } from '../store/session';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import RestaurantIndex from '../Restaurant/RestaurantIndex';
 
 const Home = props => {
     const userLoggedIn = useSelector(isLoggedIn)
@@ -10,9 +11,10 @@ const Home = props => {
     if(!userLoggedIn){
         history.push('/')
     }
+
    return(
         <div className="home-main">
-            <h1>Hello From Home</h1>
+            <RestaurantIndex />
         </div>
    )
 }
