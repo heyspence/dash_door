@@ -18,6 +18,12 @@
     font-weight: 400;
   }
 
+  @media screen and (max-width: 599px){
+    .main-nav-logo{
+      display: none;
+    }
+  }
+
   .main-nav-icon{
     position: relative;
     max-width: 42px;
