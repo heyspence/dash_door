@@ -4,7 +4,6 @@ import { ReactComponent as CartIcon } from './CartIcon.svg'
 import { ReactComponent as HamburgerMenu } from './HamburgerMenu.svg'
 
 const HomeNav = ({ display, toggleMenu, toggleCart }) => {
-    
     if(!display) return null
 
     return (
