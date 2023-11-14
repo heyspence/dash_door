@@ -16,7 +16,7 @@ const HomeNav = ({ display, toggleMenu, toggleCart }) => {
                         <img src={logo} />
                         <h1>DASHDOOR</h1>
                     </div>
-                    <h3>Home</h3>
+                    <button className="delivery-btn">Delivery</button>
                 </div>
             </div>
             <div className="home-nav-right">

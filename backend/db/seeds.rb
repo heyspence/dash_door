@@ -9,7 +9,10 @@
 restaurant = Restaurant.create([
     { name: 'McDonalds'}, 
     { name: 'TacoBell'},
-    { name: 'Subway'}
+    { name: 'Subway'},
+    { name: '7-Eleven'},
+    { name: 'Walgreens'},
+    { name: 'Halal'},
 ])
 
 user = User.create([
