@@ -13,12 +13,12 @@
 }
 
 .menu-backdrop{
-    position: fixed; /* Or absolute, depending on your layout */
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    background-color: transparent; /* Invisible backdrop */
+    width: 100vw; 
+    height: 100vh; 
+    background-color: transparent; 
     z-index: 5; 
 
 }

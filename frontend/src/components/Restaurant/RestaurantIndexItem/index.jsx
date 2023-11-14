@@ -1,8 +1,16 @@
 import './RestaurantIndexItem.css'
+import { useHistory } from 'react-router-dom'
 
-const RestaurantIndexItem = ({ name }) => {
+const RestaurantIndexItem = ({ id, name }) => {
+    const history = useHistory();
+
+    const restaurantRedirect = (e) => {
+        e.stopPropagation();
+        history.push(`/restaurants/${id}`)
+    }
+
     return(
-        <div className="restaurant-index-item">
+        <div className="restaurant-index-item" onClick={restaurantRedirect}>
             <div className="image-placeholder">
 
             </div>
