@@ -21,11 +21,25 @@
     cursor: pointer;
 }
 
+.logo-container{
+    display: flex;
+    align-items: center;
+}
+
 .home-nav-left{
+    /* width: 40%; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    margin-left: 5%;
+}
+
+.home-nav-left-inner-container{
+    width: 25vw;
+    margin-left: 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 5%;
 }
 
 .home-nav-left img{
