@@ -65,6 +65,27 @@ table {
     --secondary-gray: rgb(247 247 247);
 }
 
+/* @font-face {
+    font-family: 'GT America';
+    src: url('GT-America-Expanded-Bold-Trial.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+ }
+
+ @font-face {
+    font-family: 'GT America';
+    src: url('GT-America-Medium-Bold-Trial.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+ }
+
+ @font-face {
+    font-family: 'GT America';
+    src: url('GT-America-Regular-Bold-Trial.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+ } */
+
 .button, button{
     position: relative;
     width: 78px;

@@ -9,8 +9,8 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 const SplashPage = props => {
     const userLoggedIn = useSelector(isLoggedIn);
     const history = useHistory();
-
-    if(userLoggedIn) history.push('/home');
+    
+    if(userLoggedIn){history.push('/home');}
     
     const backgroundStyle = {
         backgroundImage: `url(${splashPageImage})`,
