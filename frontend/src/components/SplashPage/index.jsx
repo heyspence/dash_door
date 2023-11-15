@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import splashPageImage from '../../assets/images/splash-main.webp'
+import splashPageImage from '../../assets/images/new_landing_page.webp'
 import './SplashPage.css'
 import { useSelector } from 'react-redux';
 import { isLoggedIn } from '../store/session';
@@ -21,7 +21,7 @@ const SplashPage = props => {
 
     return (
         <div className='splash-page-main' style={backgroundStyle}>
-            <h2>Discover restaurants and more near you.</h2>
+            <h2>Discover restaurants and more near you</h2>
         </div>
     )
 };

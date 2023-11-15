@@ -8,11 +8,20 @@
     z-index: 5;
 }
 
+/* @media screen and (max-width: 599px){
+    .splash-page-main{
+        background-size: auto 300px !important;
+    }
+} */
+
 .splash-page-main h2{
     font-size: 35px;
     color: var(--primary-white);
     font-weight: 500;
     letter-spacing: 1.1px;
     z-index: 15;
+    max-width: 80vw;
+
     /* transform: scaleY(0.9); */
 }
+
