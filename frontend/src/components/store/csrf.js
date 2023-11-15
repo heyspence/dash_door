@@ -9,7 +9,7 @@ export const restoreCSRF = async () => {
 }
 
 
-const csrfFetch = async (url, options) => {
+const csrfFetch = async (url, options = {}) => {
     options.method = options.method || 'GET';
     options.headers = options.headers || {};
     if(options.method.toUpperCase() !== 'GET'){
