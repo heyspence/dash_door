@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchMenuItems } from "../../store/menuItems";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import MenuItemIndexItem from "../MenuItemIndexItem";
+import './MenuItemIndex.css'
 
 const MenuItemIndex = () => {
     const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const MenuItemIndex = () => {
 
 
     return(
-        <ul>
+        <ul className="menu-items-index">
             {menuItems && menuItems.map(menuItem => {
                 return (
                     <MenuItemIndexItem 
