@@ -1,0 +1,7 @@
+.menu-items-index{
+    position: relative;
+    margin-left: 25%;
+    display: flex;
+    overflow: auto;
+    /* align-items: center; */
+}

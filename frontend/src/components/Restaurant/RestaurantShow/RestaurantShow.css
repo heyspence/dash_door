@@ -1,6 +1,7 @@
 .restaurant-show{
     color: var(--primary-black);
     margin: 0 5%;
+    overflow: hidden;
 }
 
 .restaurant-show h1{

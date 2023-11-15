@@ -1,0 +1,33 @@
+.menu-item-index-item{
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
+    max-width: 125px;
+}
+
+.menu-item-index-item .image-placeholder{
+    height: 125px;
+    width: 125px;
+    border-radius: 4px;
+}
+
+.menu-item-index-item p{
+    margin: 8px 0;
+}
+
+.menu-item-price{
+    color: var(--primary-gray);
+    font-size: 14px;
+}
+
+.menu-item-index-item button{
+    position: absolute;
+    bottom: 8px;
+    right: 2px;
+    max-width: 60px;
+    margin: 0;
+    transform: scale(0.8);
+    background-color: var(--primary-white);
+    z-index: 10;
+    color: var(--primary-black);
+}
