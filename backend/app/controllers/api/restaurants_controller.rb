@@ -3,4 +3,5 @@ class Api::RestaurantsController < ApplicationController
         @restaurants = Restaurant.all
         return :index 
     end
+
 end

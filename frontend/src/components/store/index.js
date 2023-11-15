@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import errorsReducer from './errors';
 import restaurantsReducer from './restaurant';
+import menuItemsReducer from './menuItems';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   errors: errorsReducer,
-  restaurants: restaurantsReducer
+  restaurants: restaurantsReducer,
+  menuItems: menuItemsReducer
 });
 
 let enhancer;

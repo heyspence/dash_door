@@ -7,7 +7,8 @@ import { restoreCSRF } from './components/store/csrf';
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-if(!sessionStorage.getItem('X-CSRF-Token')){
+if(!sessionStorage.getItem('X-CSRF-Token')
+){
     restoreCSRF().then(()=>{root.render(<App />);})
 }else{
     root.render(<App />);

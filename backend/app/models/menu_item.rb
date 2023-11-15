@@ -10,4 +10,5 @@
 #  updated_at    :datetime         not null
 #
 class MenuItem < ApplicationRecord
+    belongs_to :restaurant
 end
