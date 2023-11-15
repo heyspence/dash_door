@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 restaurant = Restaurant.create([
-    { name: 'McDonalds'}, 
+    { name: "McDonald's"}, 
     { name: 'TacoBell'},
     { name: 'Subway'},
     { name: '7-Eleven'},

@@ -5,6 +5,7 @@ import SplashPage from "./components/SplashPage";
 import { Provider } from 'react-redux';
 import configureStore from "./components/store";
 import Home from "./components/Home";
+import RestaurantShow from "./components/Restaurant/RestaurantShow";
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
           <NavigationBar />
           <Switch>
             <Route exact path="/home" component={Home}/>
-            {/* <Route exact path="/restaurants/:id"><RestaurantShowPage /></Route> */}
+            <Route exact path="/restaurants/:id" component={RestaurantShow} />
             <Route path="/" component={SplashPage} />
           </Switch>
         </BrowserRouter>

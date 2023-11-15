@@ -7,7 +7,7 @@
     width: 100%;
     border-bottom: 1px solid rgb(231 231 231);
     user-select: none;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
 }
@@ -48,6 +48,7 @@
 .logo-container{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .home-nav-left{
@@ -72,7 +73,7 @@
 }
 
 .home-nav-right{
-    margin-right: 5%;
+    margin-right: 7%;
     display: flex;
     align-items: center;
 }

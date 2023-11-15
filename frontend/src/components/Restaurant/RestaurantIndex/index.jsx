@@ -26,7 +26,7 @@ const RestaurantIndex = props => {
                 <h2>Quick Essentials Nearby</h2>
                 <ul>
                     {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem name={restaurant.name} key={restaurant.id} />
+                        return <RestaurantIndexItem name={restaurant.name} id={restaurant.id} key={restaurant.id} />
                     }))}
                 </ul>
             </div>
@@ -35,7 +35,7 @@ const RestaurantIndex = props => {
                 <h2>Fastest Near You</h2>
                 <ul>
                     {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem name={restaurant.name} key={restaurant.id} />
+                        return <RestaurantIndexItem name={restaurant.name} id={restaurant.id} key={restaurant.id} />
                     }))}
                 </ul>
             </div>
@@ -44,7 +44,7 @@ const RestaurantIndex = props => {
                 <h2>Fastest Near You</h2>
                 <ul>
                     {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem name={restaurant.name} key={restaurant.id} />
+                        return <RestaurantIndexItem name={restaurant.name} id={restaurant.id} key={restaurant.id} />
                     }))}
                 </ul>
             </div>
@@ -53,7 +53,7 @@ const RestaurantIndex = props => {
                 <h2>Fastest Near You</h2>
                 <ul>
                     {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem name={restaurant.name} key={restaurant.id} />
+                        return <RestaurantIndexItem name={restaurant.name} id={restaurant.id} key={restaurant.id} />
                     }))}
                 </ul>
             </div>
