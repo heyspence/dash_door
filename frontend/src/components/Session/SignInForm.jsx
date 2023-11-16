@@ -18,7 +18,7 @@ const SignInForm = ({ onClose }) => {
             onClose()
             history.push('/home')
         }
-    },[userLoggedIn])
+    },[userLoggedIn, history, onClose])
 
     const submitHandler = (e) => {
         e.preventDefault();

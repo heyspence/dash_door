@@ -19,7 +19,7 @@ const HomeNav = ({ display, toggleMenu, toggleCart }) => {
                 <HamburgerMenu onClick={toggleMenu}/>
                 <div className="home-nav-left-inner-container">
                     <div className="logo-container" onClick={handleClickToHome}>
-                        <img src={logo} />
+                        <img alt="DashDoor main logo" src={logo} />
                         <h1>DASHDOOR</h1>
                     </div>
                     <button className="delivery-btn">Delivery</button>

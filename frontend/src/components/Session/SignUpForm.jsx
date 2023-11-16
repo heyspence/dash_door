@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import './SignUpForm.css'
 import { isLoggedIn, signIn, signUp } from '../store/session';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -13,7 +13,7 @@ const SignUpForm = ({ onClose }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
-    const [country, setCountry] = useState('');
+    // const [country, setCountry] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
 
@@ -22,7 +22,7 @@ const SignUpForm = ({ onClose }) => {
             onClose();
             history.push('/home')
         }
-    },[userLoggedIn])
+    },[userLoggedIn, history, onClose])
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -30,7 +30,7 @@ const SignUpForm = ({ onClose }) => {
             firstName,
             lastName,
             email,
-            country,
+            // country,
             phoneNumber,
             password
         }
@@ -58,9 +58,6 @@ const SignUpForm = ({ onClose }) => {
 
                 <label htmlFor="email">Email </label>
                 <input id="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)}/>
-
-                {/* <label htmlFor="country">Country </label>
-                <input id="country" type="text" value={country} onChange={(e) => setCountry(e.target.value)}/> */}
 
                 <label htmlFor="phone-number">Phone Number </label>
                 <input id="phone-number" type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import splashPageImage from '../../assets/images/new_landing_page.webp'
 import './SplashPage.css'
 import { useSelector } from 'react-redux';

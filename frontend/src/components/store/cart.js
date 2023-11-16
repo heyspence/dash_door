@@ -14,10 +14,10 @@ const receiveCartItems = cart_items => ({
     cart_items
 })
 
-const removeCartItem = cart_item_id => ({
-    type: REMOVE_CART_ITEM,
-    cart_item_id
-})
+// const removeCartItem = cart_item_id => ({
+//     type: REMOVE_CART_ITEM,
+//     cart_item_id
+// })
 
 export const addToCart = cartItem => async dispatch =>{
     const res = await csrfFetch(`/api/cart_items`,

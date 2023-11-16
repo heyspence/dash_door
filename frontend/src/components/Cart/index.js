@@ -21,7 +21,7 @@ const Cart = ({ closeCart, isCartOpen }) => {
         if(isCartOpen){
             dispatch(getCart(currentUserId))
         }
-    },[isCartOpen])
+    },[isCartOpen, currentUserId, dispatch])
     
     if(!isCartOpen) return null;
 
@@ -35,7 +35,7 @@ const Cart = ({ closeCart, isCartOpen }) => {
                 <h3>{cartRestaurant.name}</h3>
                 <ul className="cart-list">
                     {cartItems && cartItems.map((cartItem)=>{
-                            return <CartItem cartItem={cartItem} />
+                            return <CartItem key={cartItem.id} cartItem={cartItem} />
                     })}
                 </ul>
                 <p>Total Price: ${totalPrice}</p>
