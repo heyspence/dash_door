@@ -1,3 +1,5 @@
+import csrfFetch from "./csrf";
+
 const RECEIVE_CART_ITEM = 'cart/RECEIVE_CART_ITEM'
 const REMOVE_CART_ITEM = 'cart/REMOVE_CART_ITEM'
 const RECEIVE_CART_ITEMS = 'cart/RECEIVE_CART_ITEMS'
@@ -17,6 +19,24 @@ const removeCartItem = cart_item_id => ({
     cart_item_id
 })
 
+export const addToCart = cartItem => async dispatch =>{
+    const res = await csrfFetch(`/api/cart_items`,
+        {method: "POST",
+        body: JSON.stringify(cartItem)})
+        if(res.ok){
+            const data = await res.json();
+            dispatch(receiveCartItem(data.cartItem))
+        }
+}
+
+export const getCart = user_id => async dispatch => {
+    const res = await csrfFetch(`/api/user/${user_id}/cart_items`)
+
+    if(res.ok){
+        const data = await res.json();
+        dispatch(receiveCartItems(data))
+    }
+}
 
 const cartReducer = (state = {}, action) => {
     let newState = { ...state }

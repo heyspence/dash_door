@@ -1,6 +1,7 @@
-import './MenuItemShow.css'
+import './MenuItemShow.css';
 
-const MenuItemShow = ({name, price}) => {
+const MenuItemShow = ({ onClose, handleAddToCart, name, price }) => {
+
     return (
         <div className="menu-item-show">
             <div className="menu-item-show-main-container">
@@ -10,7 +11,11 @@ const MenuItemShow = ({name, price}) => {
                 <h3>Option 1</h3>
             </div>
             <div className="menu-item-show-footer">
-                <button>Add to cart - ${price}</button>
+                <button onClick={(e) => {
+                        handleAddToCart();
+                        onClose(e);
+                    }}>Add to cart - ${price}
+                </button>
             </div>
         </div>
     )
