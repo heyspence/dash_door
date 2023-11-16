@@ -35,7 +35,7 @@ const LoginNav = ({ display }) => {
 
     return (
         <div className='main-nav-bar'>
-            <img src={logo} className='main-nav-icon' />
+            <img src={logo} alt="main logo for dashdoor" className='main-nav-icon' />
 
             <h1 className='main-nav-logo'>DASHDOOR</h1>
             <div className='main-nav-links'>

@@ -8,7 +8,7 @@ const recieveRestaurants = restaurants => ({
 })
 
 export const fetchRestaurants = () => async dispatch => {
-    const res = await fetch('api/restaurants');
+    const res = await csrfFetch('api/restaurants');
     if(res.ok){
         const data = await res.json()
         dispatch(recieveRestaurants(data))
