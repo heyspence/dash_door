@@ -6,14 +6,15 @@ import './MenuItemIndexItem.css'
 const MenuItemIndexItem = ({name, price}) => {
     const [isShowOpen, setIsShowOpen] = useState();
 
-    const toggleIsShowOpen = () =>{
+    const toggleIsShowOpen = (e) =>{
+        e.stopPropagation();
         setIsShowOpen(!isShowOpen)
     }
 
     return (
-        <li className="menu-item-index-item" onClick={toggleIsShowOpen}>
-            <div className="image-placeholder">
-                <button onClick={toggleIsShowOpen}>Add</button>
+        <li className="menu-item-index-item">
+            <div className="image-placeholder" onClick={toggleIsShowOpen}>
+                <button>Add</button>
             </div>
             <p className="menu-item-name">{name}</p>
             <p className="menu-item-price">${price}</p>

@@ -1,7 +1,6 @@
 .menu-item-index-item{
     margin: 10px;
     position: relative;
-    cursor: pointer;
     max-width: 125px;
 }
 
@@ -9,6 +8,7 @@
     height: 125px;
     width: 125px;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .menu-item-index-item p{
