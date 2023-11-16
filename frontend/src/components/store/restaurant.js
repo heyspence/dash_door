@@ -15,6 +15,19 @@ export const fetchRestaurants = () => async dispatch => {
     }
 }
 
+export const findRestaurantByMenuItem = (state, menuItemId) =>{
+    if(!menuItemId) return ''
+    const restaurants = Object.values(state.restaurants);
+
+    for(const restaurant of restaurants){
+        if(restaurant.menuItems.some(menuItem => menuItem === menuItemId)){
+        return restaurant
+        }else{
+            return ''
+        }
+    }
+}
+
 const restaurantsReducer = (state = {}, action) => {
     switch(action.type){
         case RECEIVE_RESTAURANTS:

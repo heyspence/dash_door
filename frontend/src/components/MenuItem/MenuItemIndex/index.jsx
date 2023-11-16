@@ -24,7 +24,8 @@ const MenuItemIndex = () => {
                     <MenuItemIndexItem 
                         key={menuItem.id}
                         name={menuItem.name} 
-                        price={menuItem.price} 
+                        price={menuItem.price}
+                        id={menuItem.id}
                     />
                 )
             })}

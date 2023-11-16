@@ -15,13 +15,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_15_210505) do
   enable_extension "plpgsql"
 
   create_table "cart_items", force: :cascade do |t|
-    t.bigint "users_id", null: false
-    t.bigint "menu_items_id", null: false
-    t.integer "quantity", null: false
+    t.bigint "user_id", null: false
+    t.bigint "menu_item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["menu_items_id"], name: "index_cart_items_on_menu_items_id"
-    t.index ["users_id"], name: "index_cart_items_on_users_id"
+    t.index ["menu_item_id"], name: "index_cart_items_on_menu_item_id"
+    t.index ["user_id"], name: "index_cart_items_on_user_id"
   end
 
   create_table "menu_items", force: :cascade do |t|
@@ -54,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_15_210505) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
-  add_foreign_key "cart_items", "menu_items", column: "menu_items_id"
-  add_foreign_key "cart_items", "users", column: "users_id"
+  add_foreign_key "cart_items", "menu_items"
+  add_foreign_key "cart_items", "users"
   add_foreign_key "menu_items", "restaurants"
 end

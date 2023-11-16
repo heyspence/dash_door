@@ -19,7 +19,7 @@ user = User.create([
     { first_name: 'Demo', last_name: 'User', email: 'demo@dashdoor.com', password: 'password',phone_number: '1002003000',}
 ])
 
-menu_itme = MenuItem.create([
+menu_item = MenuItem.create([
     {name: 'French Fries', price: '3.39', restaurant_id: 1},
     {name: 'McChicken', price: '4.99', restaurant_id: 1},
     {name: '10 Piece McNuggets', price: '7.59', restaurant_id: 1},
@@ -35,5 +35,8 @@ menu_itme = MenuItem.create([
     {name: 'Sweet Onion Chicken Teriyaki', price: '9.90', restaurant_id: 3},
     {name: 'Coca-Cola Classic', price: '3.64', restaurant_id: 3},
     {name: 'Meatball Marinara', price: '8.48', restaurant_id: 3},
+])
 
+cart_item = CartItem.create([
+    {user_id: 1, menu_item_id: 1}
 ])

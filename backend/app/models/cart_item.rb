@@ -2,14 +2,13 @@
 #
 # Table name: cart_items
 #
-#  id            :bigint           not null, primary key
-#  users_id      :bigint           not null
-#  menu_items_id :bigint           not null
-#  quantity      :integer          not null
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id           :bigint           not null, primary key
+#  user_id      :bigint           not null
+#  menu_item_id :bigint           not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 class CartItem < ApplicationRecord
-    has_one :user
-    has_one :menu_item
+    belongs_to :user
+    belongs_to :menu_item
 end
