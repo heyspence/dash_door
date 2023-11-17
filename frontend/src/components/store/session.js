@@ -28,6 +28,21 @@ export const signUp = user => async dispatch =>{
     }
 }
 
+export const restoreSession = () => async dispatch => {
+    const res = await csrfFetch(`/api/session`)
+    const token = res.headers.get('X-CSRF-Token')
+
+    if(token){
+        sessionStorage.setItem('X-CSRF-Token', token)
+    }else{
+        sessionStorage.removeItem('X-CSRF-Token')
+    }
+    
+    const data = await res.json();
+    sessionStorage.setItem('currentUser', JSON.stringify(data.user))
+    dispatch({type: SET_CURRENT_USER, user: data.user})
+}
+
 export const signIn = ({email, password}) => async dispatch =>{
     const res = await csrfFetch(`/api/session`,{
         headers: {'Content-Type': 'application/json'},

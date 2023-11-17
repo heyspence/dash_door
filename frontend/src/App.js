@@ -3,13 +3,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavigationBar from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
 import { Provider } from 'react-redux';
-import configureStore from "./components/store";
 import Home from "./components/Home";
 import RestaurantShow from "./components/Restaurant/RestaurantShow";
 
-function App() {
-
-  const store = configureStore();
+function App({ store }) {
   
   return (
     <>
