@@ -4,11 +4,14 @@
     max-width: 125px;
 }
 
-.menu-item-index-item .image-placeholder{
+.menu-item-index-item img{
     height: 125px;
     width: 125px;
+    object-fit: contain;
     border-radius: 4px;
     cursor: pointer;
+    transform: scale(1);
+    overflow: hidden;
 }
 
 .menu-item-index-item p{
@@ -22,12 +25,13 @@
 
 .menu-item-index-item button{
     position: absolute;
-    bottom: 8px;
+    top: 80px;
     right: 2px;
     max-width: 60px;
     margin: 0;
     transform: scale(0.8);
     background-color: var(--primary-white);
+    box-shadow: 0 0 2px 0 var(--secondary-gray);
     z-index: 10;
     color: var(--primary-black);
 }

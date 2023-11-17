@@ -10,9 +10,11 @@
     margin-top: 13px;
 }
 
-.image-placeholder{
+.restaurant-index-image{
     height: 150px;
-    width: 300px;
-    background-color: var(--primary-red);
+    width: auto;
+    min-width: 200px;
+    /* background-color: var(--primary-red); */
+    object-fit: contain;
     border-radius: 4px;
 }
