@@ -1,14 +1,21 @@
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import './RestaurantShow.css'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { isLoggedIn } from '../../store/session'
 import MenuItemIndex from '../../MenuItem/MenuItemIndex'
+import { fetchRestaurants } from '../../store/restaurant';
+import { useEffect } from 'react'
 
 const RestaurantShow = () => {
     const { id }= useParams()
     const userLoggedIn = useSelector(isLoggedIn)
     const history = useHistory();
+    const dispatch = useDispatch();
     const restaurant = useSelector((state)=> state.restaurants[id])
+
+    useEffect(() => {
+        dispatch(fetchRestaurants());
+    },[dispatch])
     
     if(!userLoggedIn) history.push('/')
 

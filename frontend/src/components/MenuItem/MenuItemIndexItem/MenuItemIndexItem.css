@@ -12,6 +12,7 @@
     cursor: pointer;
     transform: scale(1);
     overflow: hidden;
+    position: relative;
 }
 
 .menu-item-index-item p{
@@ -28,7 +29,6 @@
     top: 80px;
     right: 2px;
     max-width: 60px;
-    margin: 0;
     transform: scale(0.8);
     background-color: var(--primary-white);
     box-shadow: 0 0 2px 0 var(--secondary-gray);

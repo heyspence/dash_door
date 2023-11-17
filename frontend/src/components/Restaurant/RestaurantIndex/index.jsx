@@ -11,6 +11,7 @@ const RestaurantIndex = props => {
     useEffect(() => {
         dispatch(fetchRestaurants());
     },[dispatch])
+    
     return(
         <>
             <div className="restaurant-index">
