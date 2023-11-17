@@ -21,17 +21,17 @@ export const findRestaurantByMenuItem = (state, menuItemId) =>{
 
     for(const restaurant of restaurants){
         if(restaurant.menuItems.some(menuItem => menuItem === menuItemId)){
-        return restaurant
-        }else{
-            return ''
+            return restaurant
         }
     }
+    return ''
 }
 
 const restaurantsReducer = (state = {}, action) => {
+    let newState = { ...state }
     switch(action.type){
         case RECEIVE_RESTAURANTS:
-            return action.restaurants;
+            return { ...newState, ...action.restaurants};
         default: 
             return state;
     }
