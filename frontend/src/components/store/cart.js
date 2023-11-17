@@ -4,20 +4,20 @@ const RECEIVE_CART_ITEM = 'cart/RECEIVE_CART_ITEM'
 const REMOVE_CART_ITEM = 'cart/REMOVE_CART_ITEM'
 const RECEIVE_CART_ITEMS = 'cart/RECEIVE_CART_ITEMS'
 
-const receiveCartItem = cart_item => ({
+const receiveCartItem = cartItem => ({
     type: RECEIVE_CART_ITEM,
-    cart_item
+    cartItem
 })
 
-const receiveCartItems = cart_items => ({
+const receiveCartItems = cartItems => ({
     type: RECEIVE_CART_ITEMS,
-    cart_items
+    cartItems
 })
 
-// const removeCartItem = cart_item_id => ({
-//     type: REMOVE_CART_ITEM,
-//     cart_item_id
-// })
+const removeCartItem = cartItemId => ({
+    type: REMOVE_CART_ITEM,
+    cartItemId
+})
 
 export const addToCart = cartItem => async dispatch =>{
     const res = await csrfFetch(`/api/cart_items`,
@@ -27,6 +27,16 @@ export const addToCart = cartItem => async dispatch =>{
             const data = await res.json();
             dispatch(receiveCartItem(data.cartItem))
         }
+}
+
+export const removeFromCart = cartItemId => async dispatch => {
+    const res = await csrfFetch(`/api/cart_items/${cartItemId}`,
+        {method: "DELETE",
+        body: cartItemId})
+    
+    if(res.ok){
+        dispatch(removeCartItem(cartItemId))
+    }
 }
 
 export const getCart = user_id => async dispatch => {
@@ -42,13 +52,13 @@ const cartReducer = (state = {}, action) => {
     let newState = { ...state }
     switch(action.type){
         case(RECEIVE_CART_ITEM):
-            newState[action.cart_item.id] = action.cart_item
+            newState[action.cartItem.id] = action.cartItem
             return newState;
         case(RECEIVE_CART_ITEMS):
-            newState = { ...action.cart_items };
+            newState = { ...action.cartItems };
             return newState
         case(REMOVE_CART_ITEM):
-            delete newState[action.cart_item_id]
+            delete newState.cartItems[action.cartItemId]
             return newState
         default:
             return newState

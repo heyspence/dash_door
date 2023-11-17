@@ -9,19 +9,22 @@ import { findRestaurantByMenuItem } from '../store/restaurant'
 const Cart = ({ closeCart, isCartOpen }) => {
     const dispatch = useDispatch();
     const cartItems = useSelector(state => state.cart?.cartItems ? Object.values(state.cart.cartItems) : [])
-    const totalPrice = useSelector(state => state.cart ? state.cart.totalPrice : 0)
     const currentUserId = useSelector(state => state.session.user?.id)
-    const cartRestaurant = useSelector(state => findRestaurantByMenuItem(state, cartItems[0]?.id))
+    const cartRestaurant = useSelector(state => findRestaurantByMenuItem(state, cartItems[0]?.menuItemId))
 
-    const handleCartClick = (e) => {
-        e.stopPropagation();
-    }
-    
+    const totalPrice = cartItems.reduce((total, item) => {
+        return total + item.price
+    }, 0).toFixed(2)
+
     useEffect(()=>{
         if(isCartOpen){
             dispatch(getCart(currentUserId))
         }
     },[isCartOpen, currentUserId, dispatch])
+    
+    const handleCartClick = (e) => {
+        e.stopPropagation();
+    }
     
     if(!isCartOpen) return null;
 
@@ -32,7 +35,7 @@ const Cart = ({ closeCart, isCartOpen }) => {
                     <CloseIcon onClick={closeCart} />
                 </div>
                 <p>Your cart from</p>
-                <h3>{cartRestaurant.name}</h3>
+                <h3>{cartRestaurant?.name}</h3>
                 <ul className="cart-list">
                     {cartItems && cartItems.map((cartItem)=>{
                             return <CartItem key={cartItem.id} cartItem={cartItem} />

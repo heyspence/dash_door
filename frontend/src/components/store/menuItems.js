@@ -15,12 +15,13 @@ export const fetchMenuItems = restaurant_id => async dispatch => {
     }
 }
 
-const menuItemsReducer = (store = {}, action) => {
+const menuItemsReducer = (state = {}, action) => {
+    let newState = { ...state }
     switch(action.type){
         case RECEIVE_MENU_ITEMS:
-            return action.menuItems
+            return { ...newState, ...action.menuItems}
         default:
-            return store
+            return state;
     }
 }
 
