@@ -17,7 +17,7 @@ const RestaurantShow = () => {
             <div className="image-placeholder" >
                 <div className="restaurant-logo" ></div>
             </div>
-            <h1>{restaurant.name}</h1>
+            <h1>{restaurant?.name}</h1>
             <p>Restaurant id: {id}</p>
             <MenuItemIndex />
         </div>

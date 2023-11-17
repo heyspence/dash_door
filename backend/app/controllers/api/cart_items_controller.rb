@@ -12,6 +12,12 @@ class Api::CartItemsController < ApplicationController
     end
 
     def destroy
+        @cart_item = CartItem.find(params[:id])
+        if @cart_item && @cart_item.destroy
+            render json: { message: "Success"}
+        else
+            render json: { errors: ["Unable to find cart item"]}
+        end
     end
 
     def index

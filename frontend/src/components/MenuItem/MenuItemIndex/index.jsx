@@ -8,9 +8,11 @@ import './MenuItemIndex.css'
 const MenuItemIndex = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
-    const menuItems = useSelector((state)=> 
-        state.menuItems ? Object.values(state.menuItems) : []
-    );
+    const menuItems = useSelector((state)=>{
+        return state.menuItems
+            ? Object.values(state.menuItems).filter(item => item.restaurantId == id)
+            : [];
+    });
 
     useEffect(()=> {
         dispatch(fetchMenuItems(id))
