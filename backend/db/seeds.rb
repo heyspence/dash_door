@@ -36,7 +36,3 @@ menu_item = MenuItem.create([
     {name: 'Coca-Cola Classic', price: '3.64', restaurant_id: 3},
     {name: 'Meatball Marinara', price: '8.48', restaurant_id: 3},
 ])
-
-cart_item = CartItem.create([
-    {user_id: 1, menu_item_id: 1}
-])
