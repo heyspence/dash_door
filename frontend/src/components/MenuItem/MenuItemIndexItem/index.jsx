@@ -5,13 +5,12 @@ import MenuItemShow from '../MenuItemShow';
 import './MenuItemIndexItem.css'
 import { addToCart } from '../../store/cart';
 
-const MenuItemIndexItem = ({id, name, price}) => {
+const MenuItemIndexItem = ({id, image, name, price}) => {
     const [isShowOpen, setIsShowOpen] = useState();
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.user?.id)
-
-    const toggleIsShowOpen = (e) =>{
-        e.stopPropagation();
+    
+    const toggleIsShowOpen = () =>{
         setIsShowOpen(!isShowOpen)
     }
 
@@ -21,14 +20,14 @@ const MenuItemIndexItem = ({id, name, price}) => {
             menu_item_id: id
         }
         dispatch(addToCart(cart_item))
+        toggleIsShowOpen()
     }
 
     return (
         <>
             <li className="menu-item-index-item">
-                <div className="image-placeholder" onClick={toggleIsShowOpen}>
-                    <button onClick={handleAddToCart}>Add</button>
-                </div>
+                <img src={image} onClick={toggleIsShowOpen} />
+                    <button>Add</button>
                 <p className="menu-item-name">{name}</p>
                 <p className="menu-item-price">${price}</p>
             </li>

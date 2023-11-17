@@ -11,4 +11,5 @@
 #
 class MenuItem < ApplicationRecord
     belongs_to :restaurant
+    has_one_attached :photo
 end

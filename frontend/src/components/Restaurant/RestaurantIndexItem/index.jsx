@@ -11,9 +11,7 @@ const RestaurantIndexItem = ({ id, name }) => {
 
     return(
         <div className="restaurant-index-item" onClick={restaurantRedirect}>
-            <div className="image-placeholder">
-
-            </div>
+            <img src="http://spencerheywood.com/images/dash_door/favicon.ico" className="restaurant-index-image" />
             <h3>{name}</h3>
         </div>
     )

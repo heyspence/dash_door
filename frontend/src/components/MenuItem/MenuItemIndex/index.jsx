@@ -18,7 +18,6 @@ const MenuItemIndex = () => {
         dispatch(fetchMenuItems(id))
     },[dispatch, id])
 
-
     return(
         <ul className="menu-items-index">
             {menuItems && menuItems.map(menuItem => {
@@ -27,6 +26,7 @@ const MenuItemIndex = () => {
                         key={menuItem.id}
                         name={menuItem.name} 
                         price={menuItem.price}
+                        image={menuItem.imageUrl}
                         id={menuItem.id}
                     />
                 )
