@@ -4,7 +4,7 @@ import { fetchRestaurants } from '../../store/restaurant';
 import { useEffect } from 'react';
 import RestaurantIndexItem from '../RestaurantIndexItem';
 
-const RestaurantIndex = props => {
+const RestaurantIndex = () => {
     const restaurants = useSelector(state => state?.restaurants)
     const dispatch = useDispatch();
 
@@ -14,69 +14,34 @@ const RestaurantIndex = props => {
 
     return(
         <>
-            <div className="restaurant-index">
+            <div className="restaurant-index-container">
                 <h2>Convenience & drugstores</h2>
-                <ul>
-                    {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem 
-                            name={restaurant.name} 
-                            imageUrl={restaurant.imageUrl} 
-                            id={restaurant.id} 
-                            key={restaurant.id} />
-                    }))}
-                </ul>
+                <div className="restaurant-index">
+                    <ul>
+                        {Object.values(restaurants).map((restaurant => {
+                            return <RestaurantIndexItem 
+                                name={restaurant.name} 
+                                imageUrl={restaurant.imageUrl} 
+                                id={restaurant.id} 
+                                key={restaurant.id} />
+                        }))}
+                    </ul>
+                </div>
             </div>
 
-            <div className="restaurant-index">
+            <div className="restaurant-index-container">
                 <h2>Quick Essentials Nearby</h2>
-                <ul>
-                    {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem 
-                            name={restaurant.name} 
-                            imageUrl={restaurant.imageUrl} 
-                            id={restaurant.id} 
-                            key={restaurant.id} />
-                    }))}
-                </ul>
-            </div>
-
-            <div className="restaurant-index">
-                <h2>Fastest Near You</h2>
-                <ul>
-                    {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem 
-                            name={restaurant.name} 
-                            imageUrl={restaurant.imageUrl} 
-                            id={restaurant.id} 
-                            key={restaurant.id} />
-                    }))}
-                </ul>
-            </div>
-
-            <div className="restaurant-index">
-                <h2>Convenience & drugstores</h2>
-                <ul>
-                    {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem 
-                            name={restaurant.name} 
-                            imageUrl={restaurant.imageUrl} 
-                            id={restaurant.id} 
-                            key={restaurant.id} />
-                    }))}
-                </ul>
-            </div>
-
-            <div className="restaurant-index">
-                <h2>Convenience & drugstores</h2>
-                <ul>
-                    {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem 
-                            name={restaurant.name} 
-                            imageUrl={restaurant.imageUrl} 
-                            id={restaurant.id} 
-                            key={restaurant.id} />
-                    }))}
-                </ul>
+                <div className="restaurant-index">
+                    <ul>
+                        {Object.values(restaurants).map((restaurant => {
+                            return <RestaurantIndexItem 
+                                name={restaurant.name} 
+                                imageUrl={restaurant.imageUrl} 
+                                id={restaurant.id} 
+                                key={restaurant.id} />
+                        }))}
+                    </ul>
+                </div>
             </div>
         </>
     )

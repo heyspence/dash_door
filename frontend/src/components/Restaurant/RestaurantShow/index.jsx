@@ -26,7 +26,12 @@ const RestaurantShow = () => {
                 <img src={restaurant?.iconImageUrl} className="restaurant-logo white-background" />
             </div>
             <h1>{restaurant?.name}</h1>
-            <p>Restaurant id: {id}</p>
+            <div className="store-info-container">
+                <p>Store Info...</p>
+                <p>Id: {id}</p>
+                <p>Open Now...</p>
+                <p>Ratings...</p>
+            </div>
             <MenuItemIndex />
         </div>
     )
