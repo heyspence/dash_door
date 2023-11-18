@@ -22,7 +22,8 @@ const RestaurantShow = () => {
     return (
         <div className="restaurant-show">
             <div className="image-placeholder" >
-                <div className="restaurant-logo" ></div>
+                <img src={restaurant?.imageUrl} className="image-placeholder" />
+                <img src={restaurant?.iconImageUrl} className="restaurant-logo white-background" />
             </div>
             <h1>{restaurant?.name}</h1>
             <p>Restaurant id: {id}</p>

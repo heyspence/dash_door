@@ -1,6 +1,6 @@
 .menu-item-show{
-    max-width: 450px;
-    min-width: 400px;
+    max-width: 75vw;
+    min-width: 350px;
     min-height: 60vh;
     background-color: var(--primary-white);
     padding: 25px 25px 25px 25px;
@@ -8,6 +8,7 @@
     margin-top: 20px;
     z-index: 15;
     position: relative;
+    padding-bottom: 70px;
 }
 
 .menu-item-show h2{
@@ -22,6 +23,7 @@
 .menu-item-show p{
     color: var(--primary-gray);
     font-size: 14px;
+    margin: 8px 0;
 }
 
 .menu-item-show-main-container{
@@ -32,13 +34,12 @@
 .menu-item-show-image-placeholder{
     width: 450px;
     height: 250px;
-    background-color: var(--primary-red);
     border-radius: 4px;
+    object-fit: cover;
 }
 
 .menu-item-show-footer{
     width: 80%;
-    /* transform: translate(-10%, 0); */
     height: 70px;
     border-top: 0.5px solid var(--secondary-gray);
     background-color: var(--primary-white);
