@@ -15,7 +15,7 @@ const MenuItemShow = ({ onClose, imageUrl, handleAddToCart, name, price }) => {
                 <button onClick={(e) => {
                         handleAddToCart();
                         onClose(e);
-                    }}>Add to cart - ${price}
+                    }}>Add to cart - ${price.toFixed(2)}
                 </button>
             </div>
         </div>

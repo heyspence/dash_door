@@ -12,7 +12,7 @@
 .restaurant-show .image-placeholder{
     background-color: var(--primary-red);
     width: 100%;
-    height: 180px;
+    height: 210px;
     border-radius: 0 0 10px 10px;
     position: relative;
     z-index: 1;
@@ -35,4 +35,9 @@
     position: absolute;
     bottom: 15px;
     left: 15px;
+}
+
+.store-info-container{
+    margin: 15px;
+    position: absolute;
 }

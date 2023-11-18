@@ -27,7 +27,7 @@ const MenuItemIndexItem = ({id, name, imageUrl, price}) => {
         <>
             <li className="menu-item-index-item">
                 <img src={imageUrl} onClick={toggleIsShowOpen} />
-                    <button>Add</button>
+                    <button onClick={toggleIsShowOpen}>Add</button>
                 <p className="menu-item-name">{name}</p>
                 <p className="menu-item-price">${price}</p>
             </li>
