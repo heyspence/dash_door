@@ -11,14 +11,18 @@ const RestaurantIndex = props => {
     useEffect(() => {
         dispatch(fetchRestaurants());
     },[dispatch])
-    
+
     return(
         <>
             <div className="restaurant-index">
                 <h2>Convenience & drugstores</h2>
                 <ul>
                     {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem name={restaurant.name} id={restaurant.id} key={restaurant.id} />
+                        return <RestaurantIndexItem 
+                            name={restaurant.name} 
+                            imageUrl={restaurant.imageUrl} 
+                            id={restaurant.id} 
+                            key={restaurant.id} />
                     }))}
                 </ul>
             </div>
@@ -27,7 +31,11 @@ const RestaurantIndex = props => {
                 <h2>Quick Essentials Nearby</h2>
                 <ul>
                     {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem name={restaurant.name} id={restaurant.id} key={restaurant.id} />
+                        return <RestaurantIndexItem 
+                            name={restaurant.name} 
+                            imageUrl={restaurant.imageUrl} 
+                            id={restaurant.id} 
+                            key={restaurant.id} />
                     }))}
                 </ul>
             </div>
@@ -36,25 +44,37 @@ const RestaurantIndex = props => {
                 <h2>Fastest Near You</h2>
                 <ul>
                     {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem name={restaurant.name} id={restaurant.id} key={restaurant.id} />
+                        return <RestaurantIndexItem 
+                            name={restaurant.name} 
+                            imageUrl={restaurant.imageUrl} 
+                            id={restaurant.id} 
+                            key={restaurant.id} />
                     }))}
                 </ul>
             </div>
 
             <div className="restaurant-index">
-                <h2>Fastest Near You</h2>
+                <h2>Convenience & drugstores</h2>
                 <ul>
                     {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem name={restaurant.name} id={restaurant.id} key={restaurant.id} />
+                        return <RestaurantIndexItem 
+                            name={restaurant.name} 
+                            imageUrl={restaurant.imageUrl} 
+                            id={restaurant.id} 
+                            key={restaurant.id} />
                     }))}
                 </ul>
             </div>
 
             <div className="restaurant-index">
-                <h2>Fastest Near You</h2>
+                <h2>Convenience & drugstores</h2>
                 <ul>
                     {Object.values(restaurants).map((restaurant => {
-                        return <RestaurantIndexItem name={restaurant.name} id={restaurant.id} key={restaurant.id} />
+                        return <RestaurantIndexItem 
+                            name={restaurant.name} 
+                            imageUrl={restaurant.imageUrl} 
+                            id={restaurant.id} 
+                            key={restaurant.id} />
                     }))}
                 </ul>
             </div>

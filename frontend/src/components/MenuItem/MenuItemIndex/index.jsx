@@ -26,7 +26,7 @@ const MenuItemIndex = () => {
                         key={menuItem.id}
                         name={menuItem.name} 
                         price={menuItem.price}
-                        image={menuItem.imageUrl}
+                        imageUrl={menuItem.imageUrl}
                         id={menuItem.id}
                     />
                 )

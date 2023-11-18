@@ -5,7 +5,7 @@ import MenuItemShow from '../MenuItemShow';
 import './MenuItemIndexItem.css'
 import { addToCart } from '../../store/cart';
 
-const MenuItemIndexItem = ({id, image, name, price}) => {
+const MenuItemIndexItem = ({id, name, imageUrl, price}) => {
     const [isShowOpen, setIsShowOpen] = useState();
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.user?.id)
@@ -26,13 +26,13 @@ const MenuItemIndexItem = ({id, image, name, price}) => {
     return (
         <>
             <li className="menu-item-index-item">
-                <img src={image} onClick={toggleIsShowOpen} />
+                <img src={imageUrl} onClick={toggleIsShowOpen} />
                     <button>Add</button>
                 <p className="menu-item-name">{name}</p>
                 <p className="menu-item-price">${price}</p>
             </li>
             <Modal isOpen={isShowOpen} onClose={toggleIsShowOpen}>
-                <MenuItemShow key={id} handleAddToCart={handleAddToCart} onClose={toggleIsShowOpen} name={name} price={price} />
+                <MenuItemShow key={id} handleAddToCart={handleAddToCart} imageUrl={imageUrl} onClose={toggleIsShowOpen} name={name} price={price} />
             </Modal>
         </>
     )

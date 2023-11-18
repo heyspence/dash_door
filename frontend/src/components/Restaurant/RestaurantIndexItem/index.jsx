@@ -1,7 +1,7 @@
 import './RestaurantIndexItem.css'
 import { useHistory } from 'react-router-dom'
 
-const RestaurantIndexItem = ({ id, name }) => {
+const RestaurantIndexItem = ({ id, name, imageUrl }) => {
     const history = useHistory();
 
     const restaurantRedirect = (e) => {
@@ -11,7 +11,9 @@ const RestaurantIndexItem = ({ id, name }) => {
 
     return(
         <div className="restaurant-index-item" onClick={restaurantRedirect}>
-            <img src="http://spencerheywood.com/images/dash_door/favicon.ico" className="restaurant-index-image" />
+            <div className="restaurant-index-image-container">
+                <img src={imageUrl} />
+            </div>
             <h3>{name}</h3>
         </div>
     )
