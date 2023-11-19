@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import Modal from '../../Modal';
 import MenuItemShow from '../MenuItemShow';
 import './MenuItemIndexItem.css'
-import { addToCart } from '../../store/cart';
+import { addToCart, toggleCart } from '../../store/cart';
 
 const MenuItemIndexItem = ({id, name, imageUrl, price}) => {
     const [isShowOpen, setIsShowOpen] = useState();
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.user?.id)
-    
+
     const toggleIsShowOpen = () =>{
         setIsShowOpen(!isShowOpen)
     }
@@ -19,6 +19,7 @@ const MenuItemIndexItem = ({id, name, imageUrl, price}) => {
             user_id: currentUserId,
             menu_item_id: id
         }
+        dispatch(toggleCart())
         dispatch(addToCart(cart_item))
         toggleIsShowOpen()
     }

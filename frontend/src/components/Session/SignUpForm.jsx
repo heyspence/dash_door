@@ -38,11 +38,15 @@ const SignUpForm = ({ onClose }) => {
     }
 
     const signInDemoUser = () =>{
+        const randomNumber = () => Math.floor(Math.random() * 10000000000)
         let user = {
-            email: "demo@dashdoor.com",
+            email: `${randomNumber()}@dashdoor.com`,
+            firstName:"Demo",
+            lastName:"User",
+            phoneNumber: randomNumber(),
             password: "password"
         }
-        dispatch(signIn(user))
+        dispatch(signUp(user))
     }
 
     return (

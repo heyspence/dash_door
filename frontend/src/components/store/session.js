@@ -1,4 +1,4 @@
-import csrfFetch from "./csrf";
+import csrfFetch, { restoreCSRF } from "./csrf";
 import { receiveErrors } from "./errors";
 
 const SET_CURRENT_USER = 'session/SET_CURRENT_USER'
@@ -43,22 +43,37 @@ export const restoreSession = () => async dispatch => {
     dispatch({type: SET_CURRENT_USER, user: data.user})
 }
 
-export const signIn = ({email, password}) => async dispatch =>{
-    const res = await csrfFetch(`/api/session`,{
-        headers: {'Content-Type': 'application/json'},
-        method: 'POST',
-        body: JSON.stringify({email, password})
-    })
 
-    if(res.ok){
-        let data = await res.json()
-        dispatch({type: SET_CURRENT_USER, user: data.user})
-        // storeCurrentUser(data.user.id)
-    }else{
-        let data = await res.json();
-        dispatch(receiveErrors(data.errors))
+export const signIn = ({email, password}) => async dispatch =>{
+    const attemptSignIn = async (retryCount = 0) =>{
+        const maxRetries = 1
+        try{
+            const res = await csrfFetch(`/api/session`,{
+                headers: {'Content-Type': 'application/json'},
+                method: 'POST',
+                body: JSON.stringify({email, password})
+            })
+
+            if(res.ok){
+                let data = await res.json()
+                dispatch({type: SET_CURRENT_USER, user: data.user})
+            }else{
+                let data = await res.json();
+
+                if(data.errors.includes("Invalid Authenticity Token") && retryCount < maxRetries){
+                    await restoreCSRF();
+                    return attemptSignIn(retryCount + 1)
+                }else{
+                    dispatch(receiveErrors(data.errors))
+                }
+            }
+        } catch (error) {
+            dispatch(receiveErrors({errors: ['An unexpected error occurred.']}))
+        }
     }
+    return attemptSignIn();
 }
+
 
 export const logout = () => async dispatch => {
     const res = await csrfFetch(`/api/session`,{

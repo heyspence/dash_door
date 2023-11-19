@@ -3,14 +3,20 @@ import logo from '../../../assets/images/doordash-logo-red.png'
 import { ReactComponent as CartIcon } from './CartIcon.svg'
 import { ReactComponent as HamburgerMenu } from './HamburgerMenu.svg'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+import { useDispatch } from 'react-redux'
 
 
 const HomeNav = ({ display, toggleMenu, toggleCart }) => {
+    const dispatch = useDispatch();
     const history = useHistory();
     if(!display) return null
 
     const handleClickToHome = () => {
         history.push('/')
+    }
+
+    const handleToggleCart = () =>{
+        dispatch(toggleCart())
     }
 
     return (
@@ -26,7 +32,7 @@ const HomeNav = ({ display, toggleMenu, toggleCart }) => {
                 </div>
             </div>
             <div className="home-nav-right">
-                <CartIcon onClick={toggleCart} />
+                <CartIcon onClick={handleToggleCart} />
             </div>
         </div>
     )
