@@ -71,43 +71,16 @@
     fill: var(--primary-black);
 }
 
-.cart-main svg:hover{
+.cart-header svg:hover{
     cursor: pointer;
 }
 
-.cart-arrow-svg{
-    transform: scale(0.4);
+.cart-header svg{
+    transform: scale(0.6);
 }
 
 .empty-cart{
     padding-left: 30px;
     transform: scale(1.2);
 }
-/* .cart-main a{
-    text-decoration: none;
-    color: var(--primary-gray)
-}
 
-.cart-main li{
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 50px;
-    margin-left: 5%;
-}
-
-.cart-main li:hover{
-    cursor: pointer;
-    background-color: var(--secondary-gray);
-}
-
-.cart-main li::after{
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    transform: scaleY(0.25);
-    background-color: var(--primary-gray);
-} */
