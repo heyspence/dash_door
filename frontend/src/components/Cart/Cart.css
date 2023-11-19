@@ -27,7 +27,7 @@
 .cart-header > p{
     color: rgb(118 118 118);
     font-weight: normal;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .checkout-button{
@@ -63,6 +63,7 @@
     align-items: center;
     flex-shrink: 0;
     margin: -10px 0px 0px -15px;
+    cursor: pointer;
 }
 
 .cart-main svg{
