@@ -1,7 +1,7 @@
 import './RestaurantIndexItem.css'
 import { useHistory } from 'react-router-dom'
 
-const RestaurantIndexItem = ({ id, name, imageUrl }) => {
+const RestaurantIndexItem = ({ id, name, imageUrl = '' }) => {
     const history = useHistory();
 
     const restaurantRedirect = (e) => {

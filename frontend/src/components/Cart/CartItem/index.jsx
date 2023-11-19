@@ -9,11 +9,10 @@ const CartItem = ({ cartItem }) => {
     const price = menuItem?.price.toFixed(2)
     const name = menuItem?.name
 
-
     return (
         <div className="cart-item">
             <li>
-                <img src={menuItem.imageUrl} className="cart-item-image" />
+                <img src={menuItem?.imageUrl} className="cart-item-image" />
                 <div className="cart-item-info">
                     <p className="cart-item-name">{name}</p>
                     <p className="cart-item-price">${price}</p>

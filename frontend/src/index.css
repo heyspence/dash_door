@@ -67,21 +67,21 @@ table {
 
 /* @font-face {
     font-family: 'GT America';
-    src: url('GT-America-Expanded-Bold-Trial.otf') format('opentype');
+    src: url('../public/fonts/GT-America-Expanded-Bold-Trial.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
  }
 
  @font-face {
     font-family: 'GT America';
-    src: url('GT-America-Medium-Bold-Trial.otf') format('opentype');
-    font-weight: 500;
+    src: url('../public/fonts/GT-America-Expanded-Medium-Trial.otf') format('opentype');
+    font-weight: medium;
     font-style: normal;
  }
 
  @font-face {
     font-family: 'GT America';
-    src: url('GT-America-Regular-Bold-Trial.otf') format('opentype');
+    src: url('../public/fonts/GT-America-Expanded-Regular-Trial.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
  } */
@@ -109,6 +109,7 @@ table {
 
 body {
     font-family: 'Roboto', sans-serif;
+    /* font-family: 'GT America', sans-serif; */
     background-color: var(--primary-white);
     color: var(--primary-white);
     height: 100%;
@@ -134,6 +135,7 @@ h3{
 label {
     color: var(--primary-black);
     font-family: 'Roboto', sans-serif;
+    /* font-family: 'GT America', sans-serif; */
 }
 
 input[type=text], input[type=password]{
