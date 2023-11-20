@@ -10,10 +10,11 @@ class Api::ReviewsController < ApplicationController
         render :show
     end
 
-    def create 
-        @review = Review.new(review_params)
+    def create
+        @restaurant = Restaurant.find(params[:restaurant_id])
+        @review = @restaurant.reviews.new(review_params)
         if @review.save
-            render json: { message: "Success"}
+            render :show
         else
             render json: { errors: "Unable to create review" }, status: :unprocessable_entity
         end

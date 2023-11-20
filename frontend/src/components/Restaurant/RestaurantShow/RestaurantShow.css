@@ -41,3 +41,27 @@
     margin: 15px;
     position: absolute;
 }
+
+.restaurant-show-reviews{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    margin-left: -20px;
+    transform: scale(0.8);
+    color: var(--primary-gray)
+}
+
+.review-button{
+    background-color: rgb(231, 231, 231);
+    color: black;
+    width: auto;
+    margin: 10px 0 0 -10px;
+    font-size: 12px;
+    height: auto;
+    padding: 7px 10px;
+}
+
+.review-button:hover{
+    background-color: var(--secondary-gray)
+}

@@ -35,3 +35,7 @@
     z-index: 10;
     color: var(--primary-black);
 }
+
+.menu-item-index-item button:hover{
+    background-color: var(--secondary-white);
+}

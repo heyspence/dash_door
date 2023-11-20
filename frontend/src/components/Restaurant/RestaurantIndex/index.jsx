@@ -29,7 +29,7 @@ const RestaurantIndex = () => {
                 </div>
             </div>
 
-            <div className="restaurant-index-container">
+            {/* <div className="restaurant-index-container">
                 <h2>Quick Essentials Nearby</h2>
                 <div className="restaurant-index">
                     <ul>
@@ -42,7 +42,7 @@ const RestaurantIndex = () => {
                         }))}
                     </ul>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }
