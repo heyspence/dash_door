@@ -14,20 +14,16 @@ class Api::CartItemsController < ApplicationController
     def destroy
         @cart_item = CartItem.find(params[:id])
         if @cart_item && @cart_item.destroy
-            render json: { message: "Success"}
+            render json: { message: "Success" }
         else
-            render json: { errors: ["Unable to find cart item"]}
+            render json: { errors: ["Cart item no longer exists"]}
         end
     end
 
     def index
         @user = User.find(params[:user_id])
         @cart_items = @user.cart_items
-        if @cart_items
-            render :index
-        else
-            render json: { errors: ["Unable to find any cart items"] }
-        end
+        render :index
     end
 
     def show
@@ -37,8 +33,5 @@ class Api::CartItemsController < ApplicationController
         else
             render json: { errors: ["Unable to find item"]}
         end
-    end
-
-    def update
     end
 end

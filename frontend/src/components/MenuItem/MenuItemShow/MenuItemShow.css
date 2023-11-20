@@ -23,7 +23,7 @@
 .menu-item-show p{
     color: var(--primary-gray);
     font-size: 14px;
-    margin: 8px 0;
+    margin: 12px 0 25px 0;
 }
 
 .menu-item-show-main-container{
@@ -32,8 +32,8 @@
 }
 
 .menu-item-show-image-placeholder{
-    width: 450px;
-    height: 250px;
+    width: 100%;
+    max-height: 250px;
     border-radius: 4px;
     object-fit: cover;
     margin: 0 auto;
@@ -48,7 +48,7 @@
     border-bottom-right-radius: 20px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-around;
     padding: 0 10%;
     position: absolute;
     bottom: 0;

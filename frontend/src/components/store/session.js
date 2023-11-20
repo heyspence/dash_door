@@ -9,6 +9,10 @@ const storeCurrentUser = user => {
     else sessionStorage.removeItem('currentUser');
 }
 
+const removeCurrentUser = () => {
+    sessionStorage.setItem('currentUser', null)
+}
+
 const selectCurrentUser = state => state?.session ? state.session.user : null;
 export const isLoggedIn = (state) => !!selectCurrentUser(state);
 
@@ -21,7 +25,7 @@ export const signUp = user => async dispatch =>{
     if(res.ok){
         let data = await res.json()
         dispatch({type: SET_CURRENT_USER, user: data.user})
-        storeCurrentUser(data.user.id)
+        storeCurrentUser(data.user)
     }else{
         let data = await res.json();
         dispatch(receiveErrors(data.errors))
@@ -56,7 +60,8 @@ export const signIn = ({email, password}) => async dispatch =>{
 
             if(res.ok){
                 let data = await res.json()
-                dispatch({type: SET_CURRENT_USER, user: data.user})
+                    dispatch({type: SET_CURRENT_USER, user: data.user})
+                    storeCurrentUser(data.user)
             }else{
                 let data = await res.json();
 
@@ -82,6 +87,7 @@ export const logout = () => async dispatch => {
 
     if(res.ok){
         dispatch({type: REMOVE_CURRENT_USER})
+        removeCurrentUser();
     }
 }
 

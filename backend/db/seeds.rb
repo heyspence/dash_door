@@ -22,7 +22,12 @@ restaurant = Restaurant.create([
 puts "Creating demo user"
 
 user = User.create([
-    { first_name: 'Demo', last_name: 'User', email: 'demo@dashdoor.com', password: 'password',phone_number: '1002003000',}
+    { first_name: 'Demo', last_name: 'User', email: 'demo@dashdoor.com', password: 'password',phone_number: '1002003000'},
+    { first_name: 'Joe', last_name: 'Burrows', email: 'joe@dashdoor.com', password: 'password',phone_number: '1002003001'},
+    { first_name: 'Demi', last_name: 'Levato', email: 'demi@dashdoor.com', password: 'password',phone_number: '1002003002'},
+    { first_name: 'Bob', last_name: 'Saget', email: 'bob@dashdoor.com', password: 'password',phone_number: '1002003003'},
+    { first_name: 'Mary', last_name: 'Jane', email: 'mary@dashdoor.com', password: 'password',phone_number: '1002003004'},
+    { first_name: 'Donald', last_name: 'Trump', email: 'donald@dashdoor.com', password: 'password',phone_number: '1002003005'}
 ])
 
 puts "Creating menu items"
@@ -55,6 +60,36 @@ menu_item = MenuItem.create([
     {name: '4Pc Signature Chicken Combo', price: '18.79', restaurant_id: 5, image_url: "http://spencerheywood.com/images/dash_door/popeyes-4pc-signature-chicken-combo.avif"},
     {name: 'Homestyle Mac & Cheese', price: '5.09', restaurant_id: 5, image_url: "http://spencerheywood.com/images/dash_door/popeyes-homestyle-mac-and-cheese.avif"},
     {name: 'Spicy Chicken Sandwich', price: '5.99', restaurant_id: 5, image_url: "http://spencerheywood.com/images/dash_door/popeyes-spicy-chicken-sandwich.avif"},
+])
+
+puts "Creating reviews"
+
+review = Review.create([
+    {user_id: 2, restaurant_id: 1, score: 1, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 1, score: 2, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 1, score: 3, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 1, score: 4, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 1, score: 5, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 2, score: 1, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 2, score: 2, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 2, score: 3, body: "This food is good and tasty"},
+    {user_id: 3, restaurant_id: 2, score: 4, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 2, score: 5, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 3, score: 1, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 3, score: 2, body: "This food is good and tasty"},
+    {user_id: 4, restaurant_id: 3, score: 3, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 3, score: 4, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 3, score: 5, body: "This food is good and tasty"},
+    {user_id: 3, restaurant_id: 4, score: 1, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 4, score: 2, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 4, score: 3, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 4, score: 4, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 4, score: 5, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 5, score: 5, body: "This food is good and tasty"},
+    {user_id: 5, restaurant_id: 5, score: 5, body: "This food is good and tasty"},
+    {user_id: 2, restaurant_id: 5, score: 5, body: "This food is good and tasty"},
+    {user_id: 5, restaurant_id: 5, score: 5, body: "This food is good and tasty"},
+    {user_id: 4, restaurant_id: 5, score: 5, body: "This food is good and tasty"}
 ])
 
 puts "Done!"
