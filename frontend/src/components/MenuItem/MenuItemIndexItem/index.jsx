@@ -31,7 +31,7 @@ const MenuItemIndexItem = ({id, name, imageUrl, price}) => {
                 <img src={imageUrl} onClick={toggleIsShowOpen} />
                     <button onClick={toggleIsShowOpen}>Add</button>
                 <p className="menu-item-name">{name}</p>
-                <p className="menu-item-price">${price}</p>
+                <p className="menu-item-price">${price.toFixed(2)}</p>
             </li>
             <Modal isOpen={isShowOpen} onClose={toggleIsShowOpen}>
                 <MenuItemShow key={id} handleAddToCart={handleAddToCart} imageUrl={imageUrl} onClose={toggleIsShowOpen} name={name} price={price} />

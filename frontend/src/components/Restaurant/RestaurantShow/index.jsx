@@ -4,8 +4,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { isLoggedIn } from '../../store/session'
 import MenuItemIndex from '../../MenuItem/MenuItemIndex'
 import { fetchRestaurants } from '../../store/restaurant';
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchReviews } from '../../store/reviews'
+import { ReactComponent as StarSvg } from '../../../assets/svg/reviewStar.svg'
+import Modal from '../../Modal'
+import ReviewForm from './ReviewForm'
 
 const RestaurantShow = () => {
     const { id }= useParams()
@@ -14,11 +17,24 @@ const RestaurantShow = () => {
     const dispatch = useDispatch();
     const restaurant = useSelector((state)=> state.restaurants[id])
     const reviews = useSelector(state => state?.reviews ? Object.values(state.reviews) : [])
-
+    const [reviewModalOpen, setReviewModalOpen] = useState(false);
+    
     useEffect(() => {
         dispatch(fetchRestaurants());
         dispatch(fetchReviews(id));
     },[dispatch, id])
+
+    const toggleReviewModal = () => {
+        setReviewModalOpen(!reviewModalOpen)
+    }
+
+    let reviewCount = 0
+    let total = 0
+
+    reviews.forEach(review => {
+        reviewCount++
+        total += review.score
+    })
     
     if(!userLoggedIn) history.push('/')
 
@@ -30,14 +46,12 @@ const RestaurantShow = () => {
             </div>
             <h1>{restaurant?.name}</h1>
             <div className="store-info-container">
-                <p>Store Info...</p>
-                <p>Id: {id}</p>
-                <p>Open Now...</p>
-                <ul>{reviews && reviews.map(review => {
-                    return <li key={review.id}>{review.score}, {review.body}, {review.userId}</li>
-                })}</ul>
-                <p>{reviews?.average}</p>
+                <p className="restaurant-show-reviews">{(total/reviewCount).toFixed(1)}<StarSvg className="review-star-svg"/>{ reviewCount} ratings • $$</p>
+                <button className="review-button" onClick={toggleReviewModal}>Add a Review</button>
             </div>
+            <Modal isOpen={reviewModalOpen} onClose={toggleReviewModal}>
+                <ReviewForm restaurantName={restaurant?.name} restaurantId={id} />
+            </Modal>
             <MenuItemIndex />
         </div>
     )
