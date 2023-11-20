@@ -5,6 +5,7 @@ import { isLoggedIn } from '../../store/session'
 import MenuItemIndex from '../../MenuItem/MenuItemIndex'
 import { fetchRestaurants } from '../../store/restaurant';
 import { useEffect } from 'react'
+import { fetchReviews } from '../../store/reviews'
 
 const RestaurantShow = () => {
     const { id }= useParams()
@@ -12,10 +13,12 @@ const RestaurantShow = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const restaurant = useSelector((state)=> state.restaurants[id])
+    const reviews = useSelector(state => state?.reviews ? Object.values(state.reviews) : [])
 
     useEffect(() => {
         dispatch(fetchRestaurants());
-    },[dispatch])
+        dispatch(fetchReviews(id));
+    },[dispatch, id])
     
     if(!userLoggedIn) history.push('/')
 
@@ -30,7 +33,10 @@ const RestaurantShow = () => {
                 <p>Store Info...</p>
                 <p>Id: {id}</p>
                 <p>Open Now...</p>
-                <p>Ratings...</p>
+                <ul>{reviews && reviews.map(review => {
+                    return <li key={review.id}>{review.score}, {review.body}, {review.userId}</li>
+                })}</ul>
+                <p>{reviews?.average}</p>
             </div>
             <MenuItemIndex />
         </div>

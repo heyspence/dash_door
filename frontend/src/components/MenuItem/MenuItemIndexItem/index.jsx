@@ -19,9 +19,10 @@ const MenuItemIndexItem = ({id, name, imageUrl, price}) => {
             user_id: currentUserId,
             menu_item_id: id
         }
-        dispatch(toggleCart())
-        dispatch(addToCart(cart_item))
         toggleIsShowOpen()
+        dispatch(addToCart(cart_item)).then(()=>{
+            dispatch(toggleCart())
+        })
     }
 
     return (
