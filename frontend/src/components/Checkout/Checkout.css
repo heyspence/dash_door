@@ -66,6 +66,10 @@
     color: var(--primary-black)
 }
 
+.checkout-button{
+    margin-top: 15px;
+}
+
 @media screen and (max-width: 649px){
     .checkout{
         display: flex;

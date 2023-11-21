@@ -2,7 +2,7 @@ import LoginNav from "./LoginNav";
 import HomeNav from "./HomeNav";
 import Menu from "./Menu";
 import Cart from "../Cart";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { isLoggedIn } from "../store/session";
 import { useState } from "react";
 import { toggleCart } from "../store/cart";

@@ -27,15 +27,6 @@ const ReviewIndexItem = ({review}) => {
         }
     }
 
-    const getRandomColor = () => {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
-
     const getColor = () => {
         const letters = "abcdefghijklmnopqrstuvwxyz"
         const pos = letters.indexOf(author ? author[0].toLowerCase() : 'a')

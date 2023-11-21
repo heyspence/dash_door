@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { isLoggedIn } from '../store/session';
 import { useEffect } from 'react';
-import { getCart, toggleCart } from '../store/cart';
+import { getCart } from '../store/cart';
 import { findRestaurantByMenuItem } from '../store/restaurant';
 import CartItem from '../Cart/CartItem';
 import { ReactComponent as MasterCardIcon } from '../../assets/svg/MasterCard.svg';
@@ -36,13 +36,13 @@ const Checkout = () => {
         history.push(`/home`)
     }
 
-    if(!user) history.push('/home')
+    if(!user || cartItems.length === 0) history.push('/home')
     return (
         <div className="checkout">
             <div className="checkout-info-container">
                 <div className="checkout-account-details">
                     <h3>1. Account Details</h3>
-                    <p>{user.email}</p>
+                    <p>{user?.email}</p>
                 </div>
 
                 <div className="checkout-shipping-details">
@@ -53,7 +53,7 @@ const Checkout = () => {
                         <h3>Instruction</h3>
                         <p>Leave it at my door</p>
                         <h3>Phone Number</h3>
-                        <p>{user.phoneNumber}</p>
+                        <p>{user?.phoneNumber}</p>
                     </div>
                 </div>
 

@@ -104,10 +104,10 @@ puts "Creating reviews"
 
 review = Review.create([
     {user_id: 4, restaurant_id: 1, score: 1, body: "Extremely disappointed with my last visit to McDonald's. The service was painfully slow, and my order was incorrect. The fries were cold and soggy, and the burger was overcooked. Definitely not the quality I expected."},
+    {user_id: 6, restaurant_id: 1, score: 3, body: "This McDonald's was somewhat disappointing. The staff were not very welcoming, and the food quality was mediocre at best. The only saving grace was the relatively clean seating area, but overall, not a great experience."},
     {user_id: 3, restaurant_id: 1, score: 1, body: "Absolutely the worst McDonald's I've been to. The order took forever, and when it finally arrived, it was completely wrong. The burger was cold, and the staff seemed not to care at all about the mistake. Will not be returning."},
     {user_id: 2, restaurant_id: 1, score: 1, body: "This McDonald's visit was a letdown. The place was messy, the restroom was dirty, and there was a strong smell of stale oil. The food tasted as bad as the restaurant looked. Such a poor representation of the brand."},
     {user_id: 5, restaurant_id: 1, score: 1, body: "I'm appalled by the service at this McDonald's. The staff was rude, and the wait time was absurd for fast food. My coffee was spilled in the bag, and the fries were stale. It's a total failure in service and quality."},
-    {user_id: 6, restaurant_id: 1, score: 2, body: "This McDonald's was somewhat disappointing. The staff were not very welcoming, and the food quality was mediocre at best. The only saving grace was the relatively clean seating area, but overall, not a great experience."},
     {user_id: 3, restaurant_id: 1, score: 2, body: "The service at this McDonald's was slow, and the food was barely warm. The drive-thru speaker was also malfunctioning, which added to the frustration. It's not the worst, but there's a lot of room for improvement."},
     
     {user_id: 2, restaurant_id: 2, score: 2, body: "This food is dece"},

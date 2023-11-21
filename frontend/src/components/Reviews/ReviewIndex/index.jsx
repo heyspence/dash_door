@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import ReviewIndexItem from "../ReviewIndexItem";
 import './ReviewIndex.css'
 
