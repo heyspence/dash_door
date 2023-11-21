@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './ReviewIndexItem.css'
 import ReviewShow from '../ReviewShow';
+import { ReactComponent as GrayReviewStar } from '../../../assets/svg/grayReviewStar.svg'
 import Modal from '../../Modal'
 
 const ReviewIndexItem = ({review}) => {
@@ -55,8 +56,10 @@ const ReviewIndexItem = ({review}) => {
                 <div className="review-title-container">
                     <div className="name-circle" style={{ backgroundColor: randomColor }}>{ author ? author[0] : ''}</div>
                     <h3>{author}</h3>
+                    <div className="review-stars-container">
+                        {Array.from({ length: review?.score }, ()=><GrayReviewStar />)}
+                    </div>
                 </div>
-                {/* <p>{review?.score}</p> */}
                 <p className="review-index-item-body">{review?.body}</p>
             </li>
             <Modal isOpen={reviewModalisOpen} onClose={toggleReviewModal}>

@@ -14,10 +14,20 @@
     margin-top: 8px;
 }
 
+.review-stars-container{
+    display: flex;
+    margin-left: 15px;
+}
+
+.review-stars-container *{
+    transform: scale(0.8);
+    margin-right: -5px;
+}
+
 .review-title-container{
     margin: 5px 0;
     display: flex;
-    width: 50%;
+    width: 80%;
     align-items: center;
     font-size: 12px;
 }
@@ -31,6 +41,7 @@
     width: 30px;
     height: 30px;
     display: flex;
+    flex-shrink: 0;
     justify-content: space-around;
     align-items: center;
     margin-right: 10px;
@@ -44,3 +55,4 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+

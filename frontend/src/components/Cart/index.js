@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getCart, toggleCart } from '../store/cart'
 import CartItem from './CartItem'
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { findRestaurantByMenuItem } from '../store/restaurant'
 
 const Cart = () => {
