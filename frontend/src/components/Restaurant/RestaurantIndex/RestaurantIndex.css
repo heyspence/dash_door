@@ -1,14 +1,14 @@
 .restaurant-index-container{
     margin: 20px auto;
-    width: 90%;
+    width: 80%;
     height: 100%;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 649px) {
     .restaurant-index-container{
         width: 100%;
-        margin-left: 0;
-        padding: 0 20px;
+        margin: 0 auto;
+        padding: 0 10px;
     }
 }
 
@@ -17,5 +17,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.restaurant-index h2{
+    margin-left: 20px;
 }
 
