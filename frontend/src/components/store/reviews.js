@@ -38,7 +38,7 @@ const reviewsReducer = (state = {}, action) => {
     let newState = { ...state }
     switch(action.type){
         case RECEIVE_REVIEW:
-            return {}
+            return { ...newState, ...action.review}
         case RECEIVE_REVIEWS:
             return { ...action.reviews}
         case REMOVE_REVIEW:

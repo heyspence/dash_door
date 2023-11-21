@@ -1,6 +1,5 @@
 .home-main{
     color: var(--primary-black);
-    margin: 0 0 80px 40px;
     overflow-y: auto;
     overflow-x: hidden;
 }
