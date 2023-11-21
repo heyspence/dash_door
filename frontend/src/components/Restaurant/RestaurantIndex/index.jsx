@@ -15,8 +15,8 @@ const RestaurantIndex = () => {
     return(
         <>
             <div className="restaurant-index-container">
-                <h2>Featured Restaurants</h2>
                 <div className="restaurant-index">
+                <h2>Featured Restaurants</h2>
                     <ul>
                         {Object.values(restaurants).map((restaurant => {
                             return <RestaurantIndexItem 
