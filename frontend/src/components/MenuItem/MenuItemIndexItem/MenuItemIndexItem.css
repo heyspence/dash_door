@@ -19,6 +19,11 @@
     margin: 8px 0;
 }
 
+.menu-item-name{
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .menu-item-price{
     color: var(--primary-gray);
     font-size: 14px;

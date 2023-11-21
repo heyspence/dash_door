@@ -1,9 +1,14 @@
 .restaurant-index-item{
-    width: 300px;
     border-radius: 4px;
     padding: 10px 10px 10px 0px;
-    margin-right: 20px;
     cursor: pointer;
+    flex: 0 0 30%
+}
+
+@media screen and (max-width: 599px){
+    .restaurant-index-item{
+        flex: 0 0 45%
+    }
 }
 
 .restaurant-index-item h3{
@@ -13,7 +18,8 @@
 
 .restaurant-index-image-container{
     height: 150px;
-    width: 275px;
+    min-width: 200px;
+    max-width: 320px;
     overflow: hidden;
     border-radius: 4px;
     display: flex;

@@ -14,6 +14,10 @@
     flex-direction: column;
 }
 
+.close-icon:hover{
+    cursor: pointer;
+}
+
 .review-form h2{
     margin: 10px 0 20px 0;
     font-size: 28px;
