@@ -1,6 +1,5 @@
 import './RestaurantIndexItem.css'
 import { useHistory } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
 import { ReactComponent as StarSvg } from '../../../assets/svg/reviewStar.svg'
 import { useEffect, useState } from 'react';
 import csrfFetch from '../../store/csrf';
@@ -35,7 +34,7 @@ const RestaurantIndexItem = ({ id, name, imageUrl = '' }) => {
     return(
         <li className="restaurant-index-item" onClick={restaurantRedirect}>
             <div className="restaurant-index-image-container">
-                <img src={imageUrl} />
+                <img src={imageUrl} alt=""/>
             </div>
             <h3>{name}</h3>
             <span className="macro-review-container">

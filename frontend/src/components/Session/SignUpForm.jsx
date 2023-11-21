@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './SignUpForm.css'
-import { isLoggedIn, signIn, signUp } from '../store/session';
+import { isLoggedIn, signUp } from '../store/session';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import Errors from './Errors';
 import { ReactComponent as CloseIcon } from '../../assets/svg/Close.svg'
@@ -14,7 +14,6 @@ const SignUpForm = ({ onClose }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
-    // const [country, setCountry] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
 
@@ -31,7 +30,6 @@ const SignUpForm = ({ onClose }) => {
             firstName,
             lastName,
             email,
-            // country,
             phoneNumber,
             password
         }

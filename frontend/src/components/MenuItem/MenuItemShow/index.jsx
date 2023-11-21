@@ -8,7 +8,7 @@ const MenuItemShow = ({ onClose, imageUrl, handleAddToCart, name, price }) => {
                 <p>This is an example description. This food is so good and tasty.</p>
 
                 <div className="menu-item-show-image-placeholder">
-                    <img src={imageUrl} className="menu-item-show-image-placeholder" />
+                    <img src={imageUrl} className="menu-item-show-image-placeholder" alt=""/>
                 </div>
             </div>
             <div className="menu-item-show-footer">

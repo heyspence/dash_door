@@ -6,9 +6,10 @@
 
 @media screen and (max-width: 649px) {
     .restaurant-index-container{
-        width: 100%;
+        width: 150%;
         margin: 0 auto;
         padding: 0 10px;
+        overflow-x: auto;
     }
 }
 
