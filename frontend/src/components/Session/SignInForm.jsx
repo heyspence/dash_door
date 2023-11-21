@@ -4,6 +4,7 @@ import './SignInForm.css'
 import { signIn, isLoggedIn } from '../store/session';
 import { useHistory } from 'react-router-dom'
 import Errors from './Errors';
+import { ReactComponent as CloseIcon } from '../../assets/svg/Close.svg'
 
 const SignInForm = ({ onClose }) => {
     const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const SignInForm = ({ onClose }) => {
 
     return (
         <div className='sign-in-form'>
-            <button onClick={onClose}>X</button>
+            <CloseIcon onClick={onClose} className="close-icon"/>
             <h2>Sign In </h2>
             <form onSubmit={submitHandler}>
                 <label htmlFor="email">Email </label>

@@ -33,7 +33,7 @@ const RestaurantIndexItem = ({ id, name, imageUrl = '' }) => {
     let average = reviewCount > 0 ? (total / reviewCount).toFixed(1) : null
 
     return(
-        <div className="restaurant-index-item" onClick={restaurantRedirect}>
+        <li className="restaurant-index-item" onClick={restaurantRedirect}>
             <div className="restaurant-index-image-container">
                 <img src={imageUrl} />
             </div>
@@ -43,7 +43,7 @@ const RestaurantIndexItem = ({ id, name, imageUrl = '' }) => {
                 <StarSvg className="review-star-svg" />
                 <p>({reviewCount})</p>
             </span>
-        </div>
+        </li>
     )
 }
 

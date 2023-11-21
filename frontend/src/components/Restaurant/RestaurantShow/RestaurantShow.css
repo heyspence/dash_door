@@ -1,6 +1,6 @@
 .restaurant-show{
     color: var(--primary-black);
-    margin: 0 5%;
+    margin: 0 5% 5% 5%;
     overflow-y: auto;
 }
 
@@ -8,7 +8,17 @@
     margin-top: 20px;
     font-size: 35px;
     font-weight: bold;
+    max-width: 25%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
+
+@media screen and (max-width: 599px){
+    .restaurant-show h1{
+        max-width: 90%
+    }
+}
+
 .restaurant-show .image-placeholder{
     background-color: var(--primary-red);
     width: 100%;

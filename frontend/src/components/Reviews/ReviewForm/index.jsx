@@ -32,7 +32,7 @@ const ReviewForm = ({ restaurantName, restaurantId, onClose }) => {
 
     return (
         <div className="review-form">
-            <CloseIcon />
+            <CloseIcon className="close-icon" onClick={onClose}/>
             <h2>Add a Public Review</h2>
             <h3>{ restaurantName }</h3>
             <form>

@@ -15,7 +15,7 @@ const RestaurantIndex = () => {
     return(
         <>
             <div className="restaurant-index-container">
-                <h2>Convenience & drugstores</h2>
+                <h2>Featured Restaurants</h2>
                 <div className="restaurant-index">
                     <ul>
                         {Object.values(restaurants).map((restaurant => {
@@ -28,21 +28,6 @@ const RestaurantIndex = () => {
                     </ul>
                 </div>
             </div>
-
-            {/* <div className="restaurant-index-container">
-                <h2>Quick Essentials Nearby</h2>
-                <div className="restaurant-index">
-                    <ul>
-                        {Object.values(restaurants).map((restaurant => {
-                            return <RestaurantIndexItem 
-                                name={restaurant.name} 
-                                imageUrl={restaurant.imageUrl} 
-                                id={restaurant.id} 
-                                key={restaurant.id} />
-                        }))}
-                    </ul>
-                </div>
-            </div> */}
         </>
     )
 }
