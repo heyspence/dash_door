@@ -22,7 +22,6 @@ restaurant = Restaurant.create([
     { name: 'Cheesecake Factory', image_url: "http://spencerheywood.com/images/dash_door/the-cheesecake-factory-banner.avif", icon_image_url: "http://spencerheywood.com/images/dash_door/the-cheesecake-factory-logo.avif"},
 ])
 
-# restaurant[0].photo.attached(io: URI.open("https://dash-door-seeds.s3.amazonaws.com/new_landing_page.webp"), filename: "new_landing_page.webp")
 puts "Creating demo user"
 
 user = User.create([
