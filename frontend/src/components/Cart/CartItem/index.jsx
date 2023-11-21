@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import { removeFromCart } from '../../store/cart'
 import './CartItem.css'
 import { useDispatch, useSelector } from 'react-redux'
+import { fetchMenuItem } from '../../store/menuItems';
 
 const CartItem = ({ cartItem }) => {
     const { menuItemId, id } = cartItem;
@@ -8,6 +10,10 @@ const CartItem = ({ cartItem }) => {
     const dispatch = useDispatch();
     const price = menuItem?.price.toFixed(2)
     const name = menuItem?.name
+
+    useEffect(()=>{
+        if(menuItemId) dispatch(fetchMenuItem(menuItemId))
+    },[dispatch, menuItemId])
 
     return (
         <div className="cart-item">
