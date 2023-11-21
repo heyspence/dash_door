@@ -38,10 +38,11 @@ const RestaurantIndexItem = ({ id, name, imageUrl = '' }) => {
                 <img src={imageUrl} />
             </div>
             <h3>{name}</h3>
-            <div className="restaurant-index-item-reviews-container">
-                <p className="restaurant-index-item-reviews">{average}</p><StarSvg className="review-star-svg" />
-                <p className="restaurant-index-item-review-count">({reviewCount})</p>
-            </div>
+            <span className="macro-review-container">
+                <p>{average}</p>
+                <StarSvg className="review-star-svg" />
+                <p>({reviewCount})</p>
+            </span>
         </div>
     )
 }

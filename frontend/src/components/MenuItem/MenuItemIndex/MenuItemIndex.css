@@ -3,5 +3,11 @@
     margin-left: 25%;
     display: flex;
     overflow: auto;
-    /* align-items: center; */
+    margin-top: -50px;
+}
+
+@media screen and (max-width: 599px){
+    .menu-items-index{
+        margin: 80px 0 0 0;
+    }
 }
