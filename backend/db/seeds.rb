@@ -83,8 +83,8 @@ menu_item = MenuItem.create([
     {name: 'Garden Fresh Pizza', price: '13.99', restaurant_id: 7, image_url: "http://spencerheywood.com/images/dash_door/papa-johns-garden-fresh-pizza.avif"},
     {name: 'Pepperoni Pizza', price: '11.00', restaurant_id: 7, image_url: "http://spencerheywood.com/images/dash_door/papa-johns-pepperoni-pizza.avif"},
     {name: 'Pepsi', price: '2.49', restaurant_id: 7, image_url: "http://spencerheywood.com/images/dash_door/papa-johns-pepsi.avif"},
-    {name: 'Super Hawaiian Pizza', price: '13.99', restaurant_id: 6, image_url: "http://spencerheywood.com/images/dash_door/papa-johns-super-hawaiian-pizza.avif"},
-    {name: 'The Meats Pizza', price: '13.99', restaurant_id: 6, image_url: "http://spencerheywood.com/images/dash_door/papa-johns-the-meats-pizza.avif"},
+    {name: 'Super Hawaiian Pizza', price: '13.99', restaurant_id: 7, image_url: "http://spencerheywood.com/images/dash_door/papa-johns-super-hawaiian-pizza.avif"},
+    {name: 'The Meats Pizza', price: '13.99', restaurant_id: 7, image_url: "http://spencerheywood.com/images/dash_door/papa-johns-the-meats-pizza.avif"},
     
     {name: '6" Personal Pan Pizza', price: '5.64', restaurant_id: 8, image_url: "http://spencerheywood.com/images/dash_door/pizza-hut-6\"-personal-pan-pizza.avif"},
     {name: '8 Boneless Wings', price: '10.97', restaurant_id: 8, image_url: "http://spencerheywood.com/images/dash_door/pizza-hut-8-boneless-wings.avif"},
