@@ -6,7 +6,7 @@ import './MenuItemIndexItem.css'
 import { addToCart, toggleCart } from '../../store/cart';
 
 const MenuItemIndexItem = ({id, name, imageUrl, price}) => {
-    const [isShowOpen, setIsShowOpen] = useState();
+    const [isShowOpen, setIsShowOpen] = useState(false);
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.user?.id)
 
