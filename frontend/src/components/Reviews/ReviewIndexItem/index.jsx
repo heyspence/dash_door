@@ -1,9 +1,16 @@
 import { useEffect, useState } from 'react'
 import './ReviewIndexItem.css'
+import ReviewShow from '../ReviewShow';
+import Modal from '../../Modal'
 
 const ReviewIndexItem = ({review}) => {
 
     const [author, setAuthor] = useState();
+    const [reviewModalisOpen, setReviewModalisOpen] = useState();
+
+    const toggleReviewModal = () => {
+        setReviewModalisOpen(!reviewModalisOpen)
+    }
 
     useEffect(()=>{
         if(review?.userId){
@@ -15,7 +22,7 @@ const ReviewIndexItem = ({review}) => {
         const res = await fetch(`/api/users/${authorId}`)
         if(res.ok){
             const { user } = await res.json();
-            setAuthor(user.firstName + " " + user.lastName[0].toUpperCase() + ".")
+            setAuthor(user.firstName + " " + user.lastName[0].toUpperCase())
         }
     }
 
@@ -43,14 +50,19 @@ const ReviewIndexItem = ({review}) => {
     const randomColor = getColor()
 
     return (
-        <li className="review-index-item">
-            <div className="review-title-container">
-                <div className="name-circle" style={{ backgroundColor: randomColor }}>{ author ? author[0] : ''}</div>
-                <h3>{author}</h3>
-            </div>
-            {/* <p>{review?.score}</p> */}
-            <p className="review-index-item-body">{review?.body}</p>
-        </li>
+        <>
+            <li className="review-index-item" onClick={toggleReviewModal}>
+                <div className="review-title-container">
+                    <div className="name-circle" style={{ backgroundColor: randomColor }}>{ author ? author[0] : ''}</div>
+                    <h3>{author}</h3>
+                </div>
+                {/* <p>{review?.score}</p> */}
+                <p className="review-index-item-body">{review?.body}</p>
+            </li>
+            <Modal isOpen={reviewModalisOpen} onClose={toggleReviewModal}>
+                <ReviewShow review={review} author={author} onClose={toggleReviewModal}/>
+            </Modal>
+        </>
     )
 }
 

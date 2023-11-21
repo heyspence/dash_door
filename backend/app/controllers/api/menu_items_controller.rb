@@ -5,4 +5,9 @@ class Api::MenuItemsController < ApplicationController
         @menu_items = @restaurant.menu_items
         render :index
     end
+
+    def show
+        @menu_item = MenuItem.find(params[:id])
+        render :show
+    end
 end
