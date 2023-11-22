@@ -23,10 +23,13 @@ export const fetchMenuItems = restaurantId => async dispatch => {
 }
 
 export const fetchMenuItem = menuItemId => async dispatch => {
-    const res = await fetch(`api/menu_items/${menuItemId}`)
+    const res = await fetch(`/api/menu_items/${menuItemId}`)
     if(res.ok){
         const data = await res.json()
         dispatch(receiveMenuItem(data))
+    }else{
+        const data = await res.json()
+        console.log(data)
     }
 }
 

@@ -29,7 +29,7 @@ const RestaurantIndexItem = ({ id, name, imageUrl = '' }) => {
 
     let reviewCount = reviews.length
     let total = reviews.reduce((acc, review) => acc + review.score, 0)
-    let average = reviewCount > 0 ? (total / reviewCount).toFixed(1) : null
+    let average = reviewCount > 0 ? (total / reviewCount).toFixed(1) : '--.--'
 
     return(
         <li className="restaurant-index-item" onClick={restaurantRedirect}>
