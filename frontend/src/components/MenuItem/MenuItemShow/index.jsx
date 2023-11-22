@@ -5,7 +5,7 @@ const MenuItemShow = ({ onClose, imageUrl, handleAddToCart, name, price }) => {
         <div className="menu-item-show">
             <div className="menu-item-show-main-container">
                 <h2>{name}</h2>
-                <p>This is an example description. This food is so good and tasty.</p>
+                <p>Delicious food description coming soon.</p>
 
                 <div className="menu-item-show-image-placeholder">
                     <img src={imageUrl} className="menu-item-show-image-placeholder" alt=""/>

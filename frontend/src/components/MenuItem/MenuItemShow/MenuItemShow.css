@@ -29,6 +29,7 @@
 .menu-item-show-main-container{
     overflow-y: auto;
     max-height: 75vh;
+    margin-bottom: 15px;
 }
 
 .menu-item-show-image-placeholder{
