@@ -7,7 +7,7 @@ const ReviewIndex = () => {
 
     return (
         <ul className="review-index">
-            { reviews && reviews.map(review => {
+            { reviews && reviews.reverse().map(review => {
                 return <ReviewIndexItem review={review} key={review?.id} />
             })}
         </ul>

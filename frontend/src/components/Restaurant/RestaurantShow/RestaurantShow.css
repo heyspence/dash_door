@@ -9,8 +9,6 @@
     font-size: 35px;
     font-weight: bold;
     max-width: 25%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
 }
 
 @media screen and (max-width: 599px){
