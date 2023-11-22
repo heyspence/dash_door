@@ -31,7 +31,8 @@ const restaurantsReducer = (state = {}, action) => {
     let newState = { ...state }
     switch(action.type){
         case RECEIVE_RESTAURANTS:
-            return { ...newState, ...action.restaurants};
+            const restaurants = action.restaurants;
+            return { ...newState, ...restaurants};
         default: 
             return state;
     }

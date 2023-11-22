@@ -6,15 +6,14 @@
 
 @media screen and (max-width: 649px) {
     .restaurant-index-container{
-        width: 150%;
-        margin: 0 auto;
+        width: 100%;
+        margin: 20px auto;
         padding: 0 10px;
         overflow-x: auto;
     }
 }
 
 .restaurant-index ul{
-    display: flex;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

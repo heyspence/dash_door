@@ -20,7 +20,7 @@ const SplashPage = props => {
 
     return (
         <div className='splash-page-main' style={backgroundStyle}>
-            <h2>Discover restaurants and more near you</h2>
+            <h2>Custom DoorDash-Inspired Delivery App</h2>
         </div>
     )
 };
