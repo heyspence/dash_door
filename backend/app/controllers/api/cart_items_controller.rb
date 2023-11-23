@@ -20,6 +20,13 @@ class Api::CartItemsController < ApplicationController
         end
     end
 
+    def destroy_all
+        @user = User.find(params[:user_id])
+        if @user.cart_items.destroy_all
+            render json: { message: "Success" }
+        end
+    end
+
     def index
         @user = User.find(params[:user_id])
         @cart_items = @user.cart_items
