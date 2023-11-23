@@ -10,10 +10,17 @@ Rails.application.routes.draw do
     resources :cart_items, only: [:create, :destroy, :show]
 
     resources :user, only: [:index] do
-      resources :cart_items, only: [:index]
+      resources :cart_items, only: [:index] do
+        delete :destroy_all, on: :collection
+      end
+      resources :orders, only: [:index]
     end
 
-    resources :restaurants, only: [:index] do
+    resources :orders, only: [:create] do 
+      resources :order_details, only: [:index]
+    end
+
+    resources :restaurants, only: [:index, :show] do
       resources :menu_items, only: [:index]
       resources :reviews, only: [:index, :create]
     end

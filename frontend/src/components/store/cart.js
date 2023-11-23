@@ -3,6 +3,7 @@ import csrfFetch from "./csrf";
 const RECEIVE_CART_ITEM = 'cart/RECEIVE_CART_ITEM'
 const REMOVE_CART_ITEM = 'cart/REMOVE_CART_ITEM'
 const RECEIVE_CART_ITEMS = 'cart/RECEIVE_CART_ITEMS'
+const REMOVE_CART_ITEMS = 'cart/REMOVE_CART_ITEMS'
 const TOGGLE_CART = 'cart/TOGGLE_CART'
 
 const receiveCartItem = cartItem => ({
@@ -20,9 +21,23 @@ const removeCartItem = cartItemId => ({
     cartItemId
 })
 
+export const removeCartItems = () => ({
+    type: REMOVE_CART_ITEMS
+})
+
 export const toggleCart = () => ({
     type: TOGGLE_CART
 })
+
+export const deleteCartItems = userId => async dispatch => {
+    const res = await csrfFetch(`/api/user/${userId}/cart_items/destroy_all`,{
+        method: 'DELETE'
+    })
+
+    if(res.ok){
+        dispatch(removeCartItems())
+    }
+}
 
 export const addToCart = cartItem => async dispatch =>{
     const res = await csrfFetch(`/api/cart_items`,
@@ -53,7 +68,7 @@ export const getCart = user_id => async dispatch => {
     }
 }
 
-const cartReducer = (state = { isCartOpen: false}, action) => {
+const cartReducer = (state = { isCartOpen: false, cartItems: {}}, action) => {
     let newState = { ...state }
     switch(action.type){
         case(RECEIVE_CART_ITEM):
@@ -63,7 +78,10 @@ const cartReducer = (state = { isCartOpen: false}, action) => {
             newState = { ...state, ...action.cartItems };
             return newState
         case(REMOVE_CART_ITEM):
-            delete newState.cartItems[action.cartItemId]
+            delete newState.cartItems[action.cartItemId];
+            return newState;
+        case(REMOVE_CART_ITEMS):
+            newState.cartItems = {}
             return newState
         case(TOGGLE_CART):
             newState.isCartOpen = !state.isCartOpen;

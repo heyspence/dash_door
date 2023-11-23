@@ -6,6 +6,7 @@ import restaurantsReducer from './restaurant';
 import menuItemsReducer from './menuItems';
 import cartReducer from './cart';
 import reviewsReducer from './reviews';
+import ordersReducer from './orders';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   restaurants: restaurantsReducer,
   menuItems: menuItemsReducer,
   cart: cartReducer,
-  reviews: reviewsReducer
+  reviews: reviewsReducer,
+  orders: ordersReducer
 });
 
 let enhancer;

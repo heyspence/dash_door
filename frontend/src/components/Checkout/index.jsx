@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { isLoggedIn } from '../store/session';
 import { useEffect } from 'react';
-import { getCart } from '../store/cart';
+import { deleteCartItems, getCart } from '../store/cart';
 import { findRestaurantByMenuItem } from '../store/restaurant';
 import CartItem from '../Cart/CartItem';
 import { ReactComponent as MasterCardIcon } from '../../assets/svg/MasterCard.svg';
+import { createOrder } from '../store/orders';
 
 const Checkout = () => {
     const cartItems = useSelector(state => state.cart?.cartItems ? Object.values(state.cart.cartItems) : [])
@@ -33,7 +34,15 @@ const Checkout = () => {
     }
 
     const handlePlaceOrder = () => {
-        history.push(`/home`)
+        const order = { order:{
+            userId: user.id,
+            restaurantId: cartRestaurant.id,
+            total: totalPrice
+        }}
+        dispatch(createOrder(order)).then(()=>{
+            dispatch(deleteCartItems(user.id))
+            history.push(`/orders`)
+        })
     }
 
     if(!user || cartItems.length === 0) history.push('/home')

@@ -23,6 +23,11 @@ const Menu = ({isMenuOpen, closeMenu}) => {
         history.push('/');
     }
 
+    const handleOrdersClick = () => {
+        closeMenu();
+        history.push('/orders')
+    }
+
     return(
         <div className="menu-backdrop" onClick={closeMenu}>
             <div className="menu-main" onClick={handleMenuClick}>
@@ -33,7 +38,7 @@ const Menu = ({isMenuOpen, closeMenu}) => {
                     <li onClick={handleHomeClick}>Home</li>
                     <li>Pickup</li>
                     <li>Offers</li>
-                    <li>Orders</li>
+                    <li onClick={handleOrdersClick}>Orders</li>
                     <li>Account</li>
                     <li>Saved Stores</li>
                     <li>Payment</li>
