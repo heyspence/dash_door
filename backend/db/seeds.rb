@@ -11,7 +11,7 @@ require "open-uri"
 puts "Creating Restaurants"
 
 restaurant = Restaurant.create([
-    { name: "McDonald's", image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-banner.avif", icon_image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-logo.avif"}, 
+    { name: 'Starbucks', image_url: "http://spencerheywood.com/images/dash_door/starbucks-banner.avif", icon_image_url: "http://spencerheywood.com/images/dash_door/starbucks-logo.05"},
     { name: 'Tacobell', image_url: "http://spencerheywood.com/images/dash_door/taco-bell-banner.avif", icon_image_url: "http://spencerheywood.com/images/dash_door/taco-bell-logo.avif"},
     { name: 'Subway', image_url: "http://spencerheywood.com/images/dash_door/subway-banner.avif", icon_image_url: "http://spencerheywood.com/images/dash_door/subway-logo.avif"},
     { name: "Wendy's", image_url: "http://spencerheywood.com/images/dash_door/wendys-banner.avif", icon_image_url: "http://spencerheywood.com/images/dash_door/wendys-logo.avif"},
@@ -20,6 +20,9 @@ restaurant = Restaurant.create([
     { name: 'Papa Johns', image_url: "http://spencerheywood.com/images/dash_door/papa-johns-banner.avif", icon_image_url: "http://spencerheywood.com/images/dash_door/papa-johns-logo.avif"},
     { name: 'Pizza Hut', image_url: "http://spencerheywood.com/images/dash_door/pizza-hut-banner.avif", icon_image_url: "http://spencerheywood.com/images/dash_door/pizza-hut-logo.avif"},
     { name: 'Cheesecake Factory', image_url: "http://spencerheywood.com/images/dash_door/the-cheesecake-factory-banner.avif", icon_image_url: "http://spencerheywood.com/images/dash_door/the-cheesecake-factory-logo.avif"},
+    { name: 'Panda Express', image_url: "http://spencerheywood.com/images/dash_door/panda-baner.avif", icon_image_url: "http://spencerheywood.com/images/dash_door/panda-logo.avif"},
+    { name: 'Sonic', image_url: "http://spencerheywood.com/images/dash_door/sonic-banner.avif", icon_image_url: "http://spencerheywood.com/images/dash_door/sonic-logo.avif"},
+    { name: "McDonald's", image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-banner.avif", icon_image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-logo.avif"}, 
 ])
 
 puts "Creating demo user"
@@ -36,13 +39,13 @@ user = User.create([
 puts "Creating menu items"
 
 menu_item = MenuItem.create([
-    {name: 'French Fries', price: '3.39', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-fries.avif"},
-    {name: 'McChicken', price: '4.99', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-mcchicken.avif"},
-    {name: '10 Piece McNuggets', price: '7.59', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-10pc-nuggets.avif"},
-    {name: '2 Cheeseburger Meal', price: '10.99', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-2-cheeseburger-meal.avif"},
-    {name: '10 Piece McNuggets Meal', price: '12.79', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-10-piece-mcnuggets-meal.avif"},
-    {name: 'Big Mac Meal', price: '12.29', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-big-mac-meal.avif"},
- 
+    {name: 'Caffe Latte', price: '12.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-caffe-latte.avif"},
+    {name: 'Impossible Breakfast Sandwich', price: '12.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-impossible-breakfast-sandwich.avif"},
+    {name: 'Sausage, Cheddar & Egg Sandwich', price: '12.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-sausage-cheddar-egg-sandwich.avif"},
+    {name: 'Spinach, Feta & Egg-white Wrap', price: '12.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-spinach-feta-egg-white-wrap.avif"},
+    {name: 'Walnut & Pecan Loaf', price: '12.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-walnut-becan-loaf.avif"},
+    {name: 'Cappuccino', price: '12.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-cappuccino.avif"},
+
     {name: 'Chicken Quesadilla', price: '6.58', restaurant_id: 2, image_url: "http://spencerheywood.com/images/dash_door/taco-bell-chicken-quesadilla.avif"},
     {name: 'Crunchwrap Supreme', price: '6.58', restaurant_id: 2, image_url: "http://spencerheywood.com/images/dash_door/taco-bell-crunchwrap-supreme.avif"},
     {name: '2 Chicken Chalupas Supreme Combo', price: '14.63', restaurant_id: 2, image_url: "http://spencerheywood.com/images/dash_door/taco-bell-2-chicken-chalupas-supreme-combo.avif"},
@@ -55,7 +58,8 @@ menu_item = MenuItem.create([
     {name: 'Sweet Onion Chicken Teriyaki', price: '9.90', restaurant_id: 3, image_url: "http://spencerheywood.com/images/dash_door/subway-sweet-onion-chicken-teriyaki.avif"},
     {name: 'Coca-Cola Classic', price: '3.64', restaurant_id: 3, image_url: "http://spencerheywood.com/images/dash_door/subway-coca-cola-classic.avif"},
     {name: 'Meatball Marinara', price: '8.48', restaurant_id: 3, image_url: "http://spencerheywood.com/images/dash_door/subway-meatball-marinara.avif"},
-
+    {name: 'spicy-italian', price: '9.42', restaurant_id: 3, image_url: "http://spencerheywood.com/images/dash_door/subway-spicy-italian.avif"},
+    
     {name: '10 PC. Crispy Chicken Nuggets', price: '5.49', restaurant_id: 4, image_url: "http://spencerheywood.com/images/dash_door/wendys-10pc-crispy-chicken-nuggets.avif"},
     {name: '6 PC. Crispy Chicken Nuggets', price: '3.36', restaurant_id: 4, image_url: "http://spencerheywood.com/images/dash_door/wendys-6pc-crispy-chicken-nuggets.avif"},
     {name: '10 PC. Spicy Chicken Nuggets', price: '5.49', restaurant_id: 4, image_url: "http://spencerheywood.com/images/dash_door/wendys-10pc-spicy-chicken-nuggets.avif"},
@@ -63,20 +67,21 @@ menu_item = MenuItem.create([
     {name: '10 PC. Nuggets Combo', price: '12.11', restaurant_id: 4, image_url: "http://spencerheywood.com/images/dash_door/wendys-10pc-nuggets-combo.avif"},
     {name: 'Jr. Bacon Cheeseburger', price: '3.74', restaurant_id: 4, image_url: "http://spencerheywood.com/images/dash_door/wendy-jr-bacon-cheeseburger.avif"},
     {name: 'Spicy Chicken Sandwich Combo', price: '13.11', restaurant_id: 4, image_url: "http://spencerheywood.com/images/dash_door/wendys-spicy-chicken-sandwich-combo.avif"},
-   
+    
     {name: 'Cajun Fries', price: '4.95', restaurant_id: 5, image_url: "http://spencerheywood.com/images/dash_door/popeyes-cajun-fries.avif"},
     {name: '5Pc Handcrafted Tenders Combo', price: '18.94', restaurant_id: 5, image_url: "http://spencerheywood.com/images/dash_door/popeyes-5pc-handcrafted-tenders-combo.avif"},
     {name: '4Pc Signature Chicken Combo', price: '18.79', restaurant_id: 5, image_url: "http://spencerheywood.com/images/dash_door/popeyes-4pc-signature-chicken-combo.avif"},
     {name: 'Homestyle Mac & Cheese', price: '5.09', restaurant_id: 5, image_url: "http://spencerheywood.com/images/dash_door/popeyes-homestyle-mac-and-cheese.avif"},
     {name: 'Spicy Chicken Sandwich', price: '5.99', restaurant_id: 5, image_url: "http://spencerheywood.com/images/dash_door/popeyes-spicy-chicken-sandwich.avif"},
-
+    {name: '12pc Wings', price: '14.79', restaurant_id: 5, image_url: "http://spencerheywood.com/images/dash_door/popeyes-12pc-wings.avif"},
+    
     {name: 'Bacon Egg And Cheese', price: '4.73', restaurant_id: 6, image_url: "http://spencerheywood.com/images/dash_door/dunkin-bacon-egg-and-cheese.avif"},
     {name: 'Bagel With Cream Cheese Spread', price: '6.86', restaurant_id: 6, image_url: "http://spencerheywood.com/images/dash_door/dunkin-bagel-with-cream-cheese-spread.avif"},
     {name: 'Half Dozen Donuts', price: '12.48', restaurant_id: 6, image_url: "http://spencerheywood.com/images/dash_door/dunkin-half-dozen-donuts.avif"},
     {name: 'Original Blend Iced Coffee', price: '4.36', restaurant_id: 6, image_url: "http://spencerheywood.com/images/dash_door/dunkin-original-blend-iced-coffee.avif"},
     {name: 'Original Blend', price: '2.98', restaurant_id: 6, image_url: "http://spencerheywood.com/images/dash_door/dunkin-original-blend.avif"},
     {name: 'Sausage Egg And Cheese', price: '6.86', restaurant_id: 6, image_url: "http://spencerheywood.com/images/dash_door/dunkin-sausage-egg-and-cheese.avif"},
-
+    
     {name: 'Buffalo Wings', price: '8.49', restaurant_id: 7, image_url: "http://spencerheywood.com/images/dash_door/papa-johns-buffalo-wings.avif"},
     {name: 'Cheese Pizza', price: '11.00', restaurant_id: 7, image_url: "http://spencerheywood.com/images/dash_door/papa-johns-cheese-pizza.avif"},
     {name: 'Garden Fresh Pizza', price: '13.99', restaurant_id: 7, image_url: "http://spencerheywood.com/images/dash_door/papa-johns-garden-fresh-pizza.avif"},
@@ -90,25 +95,47 @@ menu_item = MenuItem.create([
     {name: '12" Medium Pizza', price: '15.24', restaurant_id: 8, image_url: "http://spencerheywood.com/images/dash_door/pizza-hut-12\"-medium-pizza.avif"},
     {name: '14" Large Pizza', price: '17.92', restaurant_id: 8, image_url: "http://spencerheywood.com/images/dash_door/pizza-hut-14\"-large-pizza.avif"},
     {name: 'Breadsticks', price: '8.16', restaurant_id: 8, image_url: "http://spencerheywood.com/images/dash_door/pizza-hut-breadsticks.avif"},
+    {name: 'Cinnabon Mini Rolls', price: '8.16', restaurant_id: 8, image_url: "http://spencerheywood.com/images/dash_door/pizza-hut-cinnabon-mini-rolls.avif"},
     
     {name: 'Cheeseburger Spring Rolls', price: '12.95', restaurant_id: 9, image_url: "http://spencerheywood.com/images/dash_door/the-cheesecake-factory-cheeseburger-spring-rolls.avif"},
     {name: 'Chocolate Tower Truffle Cake', price: '11.50', restaurant_id: 9, image_url: "http://spencerheywood.com/images/dash_door/the-cheesecake-factory-chocolate-tower-truffle-cake.avif"},
     {name: 'Fresh Strawberry Cheesecake', price: '12.50', restaurant_id: 9, image_url: "http://spencerheywood.com/images/dash_door/the-cheesecake-factory-fresh-strawberry-cheesecake.avif"},
     {name: 'Godiva Chocolate Cheesecake', price: '11.50', restaurant_id: 9, image_url: "http://spencerheywood.com/images/dash_door/the-cheesecake-factory-godiva-chocolate-cheesecake.avif"},
     {name: 'Oreo Dream Extreme Cheesecake', price: '11.50', restaurant_id: 9, image_url: "http://spencerheywood.com/images/dash_door/the-cheesecake-factory-oreo-dream-extreme-cheesecake.avif"},
+    {name: 'louisiana-chicken-pasta', price: '23.95', restaurant_id: 9, image_url: "http://spencerheywood.com/images/dash_door/the-cheesecake-factory-louisiana-chicken-pasta.avif"},
     
+    {name: 'Plate', price: '12.95', restaurant_id: 10, image_url: "http://spencerheywood.com/images/dash_door/panda-plate.avif"},
+    {name: 'Bowl', price: '12.95', restaurant_id: 10, image_url: "http://spencerheywood.com/images/dash_door/panda-bowl.avif"},
+    {name: 'Bigger Plate', price: '12.95', restaurant_id: 10, image_url: "http://spencerheywood.com/images/dash_door/panda-bigger-plate.avif"},
+    {name: 'Cream Cheese Rangoon', price: '12.95', restaurant_id: 10, image_url: "http://spencerheywood.com/images/dash_door/panda-cream-cheese-rangoon.avif"},
+    {name: 'The Original Orange Chicken', price: '12.95', restaurant_id: 10, image_url: "http://spencerheywood.com/images/dash_door/panda-the-original-orange-chicken.avif"},
+    {name: 'Family Meal', price: '43.75', restaurant_id: 10, image_url: "http://spencerheywood.com/images/dash_door/panda-family-meal.avif"},
+    
+    {name: 'quarter-pound-double-cheeseburger', price: '12.95', restaurant_id: 11, image_url: "http://spencerheywood.com/images/dash_door/sonic-quarter-pound-double-cheeseburger.avif"},
+    {name: 'hand-mixed-classic-shakes', price: '12.95', restaurant_id: 11, image_url: "http://spencerheywood.com/images/dash_door/sonic-hand-mixed-classic-shakes.avif"},
+    {name: 'fries', price: '12.95', restaurant_id: 11, image_url: "http://spencerheywood.com/images/dash_door/sonic-fries.avif"},
+    {name: 'mozzarella-sticks', price: '12.95', restaurant_id: 11, image_url: "http://spencerheywood.com/images/dash_door/sonic-mozzarella-sticks.avif"},
+    {name: 'famous-slushes', price: '12.95', restaurant_id: 11, image_url: "http://spencerheywood.com/images/dash_door/sonic-famous-slushes.avif"},
+    {name: 'tots', price: '12.95', restaurant_id: 11, image_url: "http://spencerheywood.com/images/dash_door/sonic-tots.avif"},
+    
+    {name: 'French Fries', price: '3.39', restaurant_id: 12, image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-fries.avif"},
+    {name: 'McChicken', price: '4.99', restaurant_id: 12, image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-mcchicken.avif"},
+    {name: '10 Piece McNuggets', price: '7.59', restaurant_id: 12, image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-10pc-nuggets.avif"},
+    {name: '2 Cheeseburger Meal', price: '10.99', restaurant_id: 12, image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-2-cheeseburger-meal.avif"},
+    {name: '10 Piece McNuggets Meal', price: '12.79', restaurant_id: 12, image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-10-piece-mcnuggets-meal.avif"},
+    {name: 'Big Mac Meal', price: '12.29', restaurant_id: 12, image_url: "http://spencerheywood.com/images/dash_door/mcdonalds-big-mac-meal.avif"},
 ])
+
 
 puts "Creating reviews"
 
 review = Review.create([
-    {user_id: 4, restaurant_id: 1, score: 1, body: "Extremely disappointed with my last visit to McDonald's. The service was painfully slow, and my order was incorrect. The fries were cold and soggy, and the burger was overcooked. Definitely not the quality I expected."},
-    {user_id: 6, restaurant_id: 1, score: 3, body: "This McDonald's was somewhat disappointing. The staff were not very welcoming, and the food quality was mediocre at best. The only saving grace was the relatively clean seating area, but overall, not a great experience."},
-    {user_id: 3, restaurant_id: 1, score: 1, body: "Absolutely the worst McDonald's I've been to. The order took forever, and when it finally arrived, it was completely wrong. The burger was cold, and the staff seemed not to care at all about the mistake. Will not be returning."},
-    {user_id: 2, restaurant_id: 1, score: 1, body: "This McDonald's visit was a letdown. The place was messy, the restroom was dirty, and there was a strong smell of stale oil. The food tasted as bad as the restaurant looked. Such a poor representation of the brand."},
-    {user_id: 5, restaurant_id: 1, score: 1, body: "I'm appalled by the service at this McDonald's. The staff was rude, and the wait time was absurd for fast food. My coffee was spilled in the bag, and the fries were stale. It's a total failure in service and quality."},
-    {user_id: 3, restaurant_id: 1, score: 2, body: "The service at this McDonald's was slow, and the food was barely warm. The drive-thru speaker was also malfunctioning, which added to the frustration. It's not the worst, but there's a lot of room for improvement."},
-    
+    {user_id: 3, restaurant_id: 1, score: 4, body: "Starbucks chili is always a comforting choice, but I wish their fries were consistently crispy. Overall, decent fast food."},
+    {user_id: 2, restaurant_id: 1, score: 2, body: "I occasionally crave Starbucks burgers, but their service can be slow. Good value, but not my first pick."},
+    {user_id: 4, restaurant_id: 1, score: 2, body: "Starbucks has lost its charm. Cold food, inaccurate orders, and lackluster service. Disappointed with the quality lately."},
+    {user_id: 5, restaurant_id: 1, score: 5, body: "Starbucks spicy chicken nuggets are a true delight! Friendly staff and great food, always my fast-food favorite."},
+    {user_id: 6, restaurant_id: 1, score: 1, body: "Terrible experience! Rude staff, wrong orders, and cold, greasy food. I won't be returning to this Starbucks location"},
+
     {user_id: 2, restaurant_id: 2, score: 2, body: "I used to be a big fan of Taco Bell, but the quality seems to have gone downhill recently. The last time I went, my order was messed up, and the food was lukewarm. The staff seemed rushed and didn't pay much attention to my request for extra sauce. It's a shame because I used to love their tacos."},
     {user_id: 5, restaurant_id: 2, score: 3, body: "I visit Taco Bell occasionally when I'm on the go, but I'm often left feeling underwhelmed. The prices are affordable, but the portion sizes have shrunk over time, and the taste is inconsistent. Sometimes the food is okay, but other times, it's just not worth the money."},
     {user_id: 4, restaurant_id: 2, score: 2, body: "Taco Bell is convenient, but the taste just doesn't cut it for me anymore. The ingredients feel cheap, and the flavors are mediocre at best. I've had better fast-food Mexican options elsewhere. Plus, the dining area was messy and unclean during my visit."},
@@ -158,7 +185,25 @@ review = Review.create([
     {user_id: 5, restaurant_id: 9, score: 3, body: "I used to love The Cheesecake Factory, but recent visits have been disappointing. The menu is overwhelming, and the food feels mediocre for the price. The cheesecakes are the only saving grace."},
     {user_id: 6, restaurant_id: 9, score: 2, body: "The Cheesecake Factory is overrated and overpriced. The food was bland and overcooked, and the service was slow and inattentive. I won't be returning."},
     {user_id: 3, restaurant_id: 9, score: 5, body: "The Cheesecake Factory is a culinary delight! The menu is extensive, and everything I've tried has been fantastic. The cheesecakes are worth every calorie. The atmosphere is vibrant, and the service is top-notch. A 5-star experience!"},
-    
+
+    {user_id: 3, restaurant_id: 10, score: 4, body: "Panda Express chili is always a comforting choice, but I wish their fries were consistently crispy. Overall, decent fast food."},
+    {user_id: 2, restaurant_id: 10, score: 2, body: "I occasionally crave Panda Express burgers, but their service can be slow. Good value, but not my first pick."},
+    {user_id: 4, restaurant_id: 10, score: 2, body: "Panda Express has lost its charm. Cold food, inaccurate orders, and lackluster service. Disappointed with the quality lately."},
+    {user_id: 5, restaurant_id: 10, score: 5, body: "Panda Express spicy chicken nuggets are a true delight! Friendly staff and great food, always my fast-food favorite."},
+    {user_id: 6, restaurant_id: 10, score: 1, body: "Terrible experience! Rude staff, wrong orders, and cold, greasy food. I won't be returning to this Panda Express location"},
+
+    {user_id: 3, restaurant_id: 11, score: 4, body: "Sonic chili is always a comforting choice, but I wish their fries were consistently crispy. Overall, decent fast food."},
+    {user_id: 2, restaurant_id: 11, score: 2, body: "I occasionally crave Sonic burgers, but their service can be slow. Good value, but not my first pick."},
+    {user_id: 4, restaurant_id: 11, score: 2, body: "Sonic has lost its charm. Cold food, inaccurate orders, and lackluster service. Disappointed with the quality lately."},
+    {user_id: 5, restaurant_id: 11, score: 5, body: "Sonic spicy chicken nuggets are a true delight! Friendly staff and great food, always my fast-food favorite."},
+    {user_id: 6, restaurant_id: 11, score: 1, body: "Terrible experience! Rude staff, wrong orders, and cold, greasy food. I won't be returning to this Sonic location"},
+
+    {user_id: 4, restaurant_id: 12, score: 1, body: "Extremely disappointed with my last visit to McDonald's. The service was painfully slow, and my order was incorrect. The fries were cold and soggy, and the burger was overcooked. Definitely not the quality I expected."},
+    {user_id: 6, restaurant_id: 12, score: 3, body: "This McDonald's was somewhat disappointing. The staff were not very welcoming, and the food quality was mediocre at best. The only saving grace was the relatively clean seating area, but overall, not a great experience."},
+    {user_id: 3, restaurant_id: 12, score: 1, body: "Absolutely the worst McDonald's I've been to. The order took forever, and when it finally arrived, it was completely wrong. The burger was cold, and the staff seemed not to care at all about the mistake. Will not be returning."},
+    {user_id: 2, restaurant_id: 12, score: 1, body: "This McDonald's visit was a letdown. The place was messy, the restroom was dirty, and there was a strong smell of stale oil. The food tasted as bad as the restaurant looked. Such a poor representation of the brand."},
+    {user_id: 5, restaurant_id: 12, score: 1, body: "I'm appalled by the service at this McDonald's. The staff was rude, and the wait time was absurd for fast food. My coffee was spilled in the bag, and the fries were stale. It's a total failure in service and quality."},
+    {user_id: 3, restaurant_id: 12, score: 2, body: "The service at this McDonald's was slow, and the food was barely warm. The drive-thru speaker was also malfunctioning, which added to the frustration. It's not the worst, but there's a lot of room for improvement."},
 ])
 
 puts "Done!"
