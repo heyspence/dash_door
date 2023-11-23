@@ -19,7 +19,7 @@ const OrderIndexItem = ({ order }) =>{
         if(!restaurant){
             dispatch(fetchRestaurant(restaurantId))
         }
-    },[dispatch, restaurantId])
+    },[dispatch, restaurantId, restaurant])
 
     return (
         <div className="order-index-item">
