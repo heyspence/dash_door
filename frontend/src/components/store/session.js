@@ -88,6 +88,8 @@ export const logout = () => async dispatch => {
     if(res.ok){
         dispatch({type: REMOVE_CURRENT_USER})
         removeCurrentUser();
+    }else{
+        window.location.reload();
     }
 }
 

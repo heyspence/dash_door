@@ -6,6 +6,7 @@ class Api::RestaurantsController < ApplicationController
 
     def show
         @restaurant = Restaurant.find(params[:id])
+        @address = @restaurant.address
         render :show
     end
 end

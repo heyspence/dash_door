@@ -206,4 +206,21 @@ review = Review.create([
     {user_id: 3, restaurant_id: 12, score: 2, body: "The service at this McDonald's was slow, and the food was barely warm. The drive-thru speaker was also malfunctioning, which added to the frustration. It's not the worst, but there's a lot of room for improvement."},
 ])
 
+puts "Creating Addresses"
+
+address = Address.create([
+    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 1},
+    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 2},
+    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 3},
+    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 4},
+    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 5},
+    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 6},
+    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 7},
+    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 8},
+    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 9},
+    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 10},
+    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 11},
+    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 12}
+])
+
 puts "Done!"
