@@ -22,8 +22,7 @@
 .splash-page-main h2::before{
     content: "Mobile Friendly";
     color: var(--primary-white);
-    font-size: 14px;
+    font-size: 18px;
     position: absolute;
     bottom: -70%;
-    left: 1%;
 }

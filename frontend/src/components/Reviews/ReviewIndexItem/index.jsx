@@ -48,7 +48,7 @@ const ReviewIndexItem = ({review}) => {
                     <div className="name-circle" style={{ backgroundColor: randomColor }}>{ author ? author[0] : ''}</div>
                     <h3>{author}</h3>
                     <div className="review-stars-container">
-                        {Array.from({ length: review?.score }, ()=><GrayReviewStar />)}
+                        {Array.from({ length: review?.score }, (_, index)=><GrayReviewStar key={index} />)}
                     </div>
                 </div>
                 <p className="review-index-item-body">{review?.body}</p>
