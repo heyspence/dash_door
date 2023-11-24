@@ -45,7 +45,7 @@ const SignUpForm = ({ onClose }) => {
             phoneNumber: randomNumber(),
             password: "password"
         }
-        dispatch(signUp(user))
+        dispatch(signUp(user)).then(onClose())
     }
 
     return (
@@ -68,7 +68,7 @@ const SignUpForm = ({ onClose }) => {
                 <label htmlFor="new-password">Password </label>
                 <input id="new-password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
 
-                <a onClick={signInDemoUser}>Sign in as demo user</a>
+                <a onClick={signInDemoUser}>Sign up as demo user</a>
                 <Errors />
                 <p>By tapping “Sign Up” or “Continue with Google, Facebook, or Apple,” you agree
                     to DoorDash’s Terms and Conditions and Privacy Policy.</p>

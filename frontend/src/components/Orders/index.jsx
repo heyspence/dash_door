@@ -14,20 +14,20 @@ const Orders = () => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(fetchOrders(userId))
-    },[userId, dispatch])
-
-    if(!userLoggedIn){
-        history.push('/home')
-    }
+        if(!userLoggedIn){
+            history.push('/home')
+        }else{
+            dispatch(fetchOrders(userId))
+        }
+    },[userId, dispatch, userLoggedIn, history])
 
     return (
         <div className="orders">
             <div className="orders-main-container">
                 <div className="orders-index">
                     <h2>Orders</h2>
-                    { orders && orders.map(order => {
-                        return <OrderIndexItem key={order.id} order={order}/>
+                    { orders && orders.reverse().map(order => {
+                        return <OrderIndexItem key={order} order={order}/>
                     })}
                 </div>
             </div>

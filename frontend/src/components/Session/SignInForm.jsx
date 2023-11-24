@@ -35,7 +35,7 @@ const SignInForm = ({ onClose }) => {
             email: "demo@dashdoor.com",
             password: "password"
         }
-        dispatch(signIn(user))
+        dispatch(signIn(user)).then(onClose())
     }
 
     return (

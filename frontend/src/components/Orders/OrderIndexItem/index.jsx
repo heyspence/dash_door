@@ -36,7 +36,8 @@ const OrderIndexItem = ({ order }) =>{
                 <ArrowSvg id="arrow-svg"/>
             </div>
             <div className="order-index-item-body">
-                    <p>{formattedDate} •</p>
+                    <p>{formattedDate}</p>
+                    <p>&nbsp;•&nbsp;</p>
                     <p>${formattedPrice}</p>
             </div>
         </div>

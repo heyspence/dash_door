@@ -11,11 +11,11 @@
   .main-nav-logo{
     font-family: 'Roboto', sans-serif;
     font-size: 25px;
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     left: 50%;
     transform: translate(-50%, 0) scaleY(0.95);
     position: absolute;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   @media screen and (max-width: 599px){
