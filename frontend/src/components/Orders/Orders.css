@@ -8,3 +8,9 @@
     width: 70%;
     margin: 20px 0;
 }
+
+@media screen and (max-width: 599px){
+    .orders-main-container{
+        width: 90%;
+    }
+}
