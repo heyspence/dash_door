@@ -1,6 +1,7 @@
 .review-form{
-    max-width: 75vw;
-    min-width: 400px;
+    max-width: 450px;
+    min-width: 300px;
+    width: 45vw;
     min-height: 60vh;
     background-color: var(--primary-white);
     padding: 20px;

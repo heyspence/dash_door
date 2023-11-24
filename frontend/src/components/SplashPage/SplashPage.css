@@ -16,5 +16,14 @@
     z-index: 15;
     max-width: 80vw;
     white-space: pre-wrap;
+    position: relative;
 }
 
+.splash-page-main h2::before{
+    content: "Mobile Friendly";
+    color: var(--primary-white);
+    font-size: 14px;
+    position: absolute;
+    bottom: -70%;
+    left: 1%;
+}

@@ -27,7 +27,9 @@ const ReviewForm = ({ restaurantName, restaurantId, onClose }) => {
                 score 
             }
         }
-        dispatch(createReview(restaurantId, review)).then(()=>{onClose();})
+        if(reviewBody.length > 10){
+            dispatch(createReview(restaurantId, review)).then(()=>{onClose();})
+        }
     }
 
     return (
