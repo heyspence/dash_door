@@ -39,12 +39,12 @@ user = User.create([
 puts "Creating menu items"
 
 menu_item = MenuItem.create([
-    {name: 'Caffe Latte', price: '12.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-caffe-latte.avif"},
-    {name: 'Impossible Breakfast Sandwich', price: '12.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-impossible-breakfast-sandwich.avif"},
-    {name: 'Sausage, Cheddar & Egg Sandwich', price: '12.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-sausage-cheddar-egg-sandwich.avif"},
-    {name: 'Spinach, Feta & Egg-white Wrap', price: '12.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-spinach-feta-egg-white-wrap.avif"},
-    {name: 'Walnut & Pecan Loaf', price: '12.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-walnut-becan-loaf.avif"},
-    {name: 'Cappuccino', price: '12.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-cappuccino.avif"},
+    {name: 'Caffe Latte', price: '4.75', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-caffe-latte.avif"},
+    {name: 'Impossible Breakfast Sandwich', price: '6.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-impossible-breakfast-sandwich.avif"},
+    {name: 'Sausage, Cheddar & Egg Sandwich', price: '5.45', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-sausage-cheddar-egg-sandwich.avif"},
+    {name: 'Spinach, Feta & Egg-white Wrap', price: '5.95', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-spinach-feta-egg-white-wrap.avif"},
+    {name: 'Walnut & Pecan Loaf', price: '4.75', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-walnut-becan-loaf.avif"},
+    {name: 'Cappuccino', price: '4.75', restaurant_id: 1, image_url: "http://spencerheywood.com/images/dash_door/starbucks-cappuccino.avif"},
 
     {name: 'Chicken Quesadilla', price: '6.58', restaurant_id: 2, image_url: "http://spencerheywood.com/images/dash_door/taco-bell-chicken-quesadilla.avif"},
     {name: 'Crunchwrap Supreme', price: '6.58', restaurant_id: 2, image_url: "http://spencerheywood.com/images/dash_door/taco-bell-crunchwrap-supreme.avif"},
@@ -210,17 +210,17 @@ puts "Creating Addresses"
 
 address = Address.create([
     {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 1},
-    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 2},
-    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 3},
-    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 4},
-    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 5},
-    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 6},
-    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 7},
-    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 8},
-    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 9},
-    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 10},
-    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 11},
-    {address: "1730 Pennsylvania Avenue NW, Washington, DC 20006", latitude: 38.898808067979665, longitude: -77.0403556322412, restaurant_id: 12}
+    {address: "50 Massachusetts Ave NE, Washington, DC 20002", latitude: 38.90334726359773, longitude: -77.00480020327345, restaurant_id: 2},
+    {address: "901 E St NW Suite 104, Washington, DC 20004", latitude: 38.90275499987932, longitude: -77.02368310867804, restaurant_id: 3},
+    {address: "3900 Georgia Ave NW, Washington, DC 20011", latitude: 38.943563620493634, longitude:  -77.02539987810022, restaurant_id: 4},
+    {address: "1322 14th St NW, Washington, DC 20005", latitude: 38.913859796747104, longitude: -77.03123652015837, restaurant_id: 5},
+    {address: "1101 14th St NW Ste 102, Washington, DC 20005", latitude: 38.90258127078925, longitude: -77.03020670782361, restaurant_id: 6},
+    {address: "313 H St NW, Washington, DC 20001", latitude: 38.907807481012746, longitude: -77.01694860450546, restaurant_id: 7},
+    {address: "1501 A&B Maryland Ave NE, Washington, DC 20002", latitude: 38.90713986135493, longitude: -76.9792201390115, restaurant_id: 8},
+    {address: "1426 H St NW, Washington, DC 20005", latitude: 38.90628046175839, longitude: -77.03380860725424, restaurant_id: 9},
+    {address: "429 L'Enfant Plaza SW, Washington, DC 20024", latitude: 38.88992360655783, longitude:  -77.02591234052085, restaurant_id: 10},
+    {address: "2205 W Patapsco Ave, Baltimore, MD 21230", latitude: 39.26682768252805, longitude: -76.65116402435393, restaurant_id: 11},
+    {address: "2328 Georgia Ave NW, Washington, DC 20001", latitude: 38.93545426364675, longitude: -77.01545017678886, restaurant_id: 12}
 ])
 
 puts "Done!"

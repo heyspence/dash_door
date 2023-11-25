@@ -10,6 +10,7 @@ import { ReactComponent as StarSvg } from '../../../assets/svg/reviewStar.svg'
 import Modal from '../../Modal'
 import ReviewForm from '../../Reviews/ReviewForm'
 import ReviewIndex from '../../Reviews/ReviewIndex'
+import SeeMoreModal from '../SeeMoreModal'
 
 const RestaurantShow = () => {
     const { id }= useParams()
@@ -19,6 +20,7 @@ const RestaurantShow = () => {
     const restaurant = useSelector((state)=> state.restaurants[id])
     const reviews = useSelector(state => state?.reviews ? Object.values(state.reviews) : [])
     const [reviewModalOpen, setReviewModalOpen] = useState(false);
+    const [seeMoreModalOpen, setSeeMoreModalOpen] = useState(false);
 
     useEffect(() => {
         dispatch(fetchRestaurants());
@@ -27,6 +29,10 @@ const RestaurantShow = () => {
 
     const toggleReviewModal = () => {
         setReviewModalOpen(!reviewModalOpen)
+    }
+
+    const toggleSeeMoreModal = () => {
+        setSeeMoreModalOpen(!seeMoreModalOpen)
     }
 
     let reviewCount = 0
@@ -48,13 +54,23 @@ const RestaurantShow = () => {
             <h1>{restaurant?.name}</h1>
             <div className="store-info-container">
                 <p className="restaurant-show-reviews">{(total/reviewCount).toFixed(1)}<StarSvg className="review-star-svg"/>{ reviewCount} ratings • $</p>
-                <button className="review-button" onClick={toggleReviewModal}>Add a Review</button>
+                <button className="see-more-button" onClick={toggleSeeMoreModal}>See More</button>
             </div>
+
             <Modal isOpen={reviewModalOpen} onClose={toggleReviewModal}>
-                <ReviewForm restaurantName={restaurant?.name} restaurantId={id} onClose={toggleReviewModal}/>
+                <ReviewForm restaurantName={restaurant?.name} restaurantId={id} onClose={toggleReviewModal} />
             </Modal>
-            <MenuItemIndex />
-            <ReviewIndex />
+            <Modal isOpen={seeMoreModalOpen} onClose={toggleSeeMoreModal}>
+                <SeeMoreModal restaurant={restaurant} onClose={toggleSeeMoreModal} />
+            </Modal>
+
+            <div className="menu-item-index-container">
+                <MenuItemIndex />
+            </div>
+            <div className="reviews-container">
+                <button className="review-button" onClick={toggleReviewModal}>Add a Review</button>
+                <ReviewIndex />
+            </div>
         </div>
     )
 }
