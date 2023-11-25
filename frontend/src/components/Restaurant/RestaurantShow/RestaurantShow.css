@@ -59,11 +59,21 @@
     color: var(--primary-gray)
 }
 
+.menu-item-index-container{
+    margin-bottom: 30px;
+}
+
+.reviews-container{
+    position: relative;
+}
+
 .review-button{
     background-color: rgb(231, 231, 231);
     color: black;
     width: auto;
-    margin: 10px 0 0 -10px;
+    position: absolute;
+    right: 20px;
+    top: -40px;
     font-size: 12px;
     height: auto;
     padding: 7px 10px;
@@ -71,4 +81,19 @@
 
 .review-button:hover{
     background-color: var(--secondary-gray)
+}
+
+.see-more-button{
+    background-color: var(--primary-white);
+    border: 1px solid var(--primary-black);
+    color: var(--primary-black);
+    width: auto;
+    margin: 10px 0 0 -10px;
+    font-size: 12px;
+    height: auto;
+    padding: 7px 10px;
+}
+
+.see-more-button:hover{
+    background-color: var(--primary-white);
 }
