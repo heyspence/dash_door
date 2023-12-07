@@ -1,7 +1,7 @@
 class Api::OrdersController < ApplicationController
     def index
         @user = User.find(params[:user_id])
-        @orders = @user.orders.order(created_at: :desc).limit(5)
+        @orders = @user.orders.order(created_at: :desc).limit(10)
         render :index
     end
 
