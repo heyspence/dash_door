@@ -1,7 +1,5 @@
 import { ReactComponent as CloseIcon } from '../../../assets/svg/Close.svg'
-import { Loader } from "@googlemaps/js-api-loader"
 import './SeeMoreModal.css'
-import { useEffect, useRef } from 'react';
 import GoogleMaps from '../RestaurantShow/GoogleMap';
 
 const SeeMoreModal = ({ restaurant, onClose }) => {
