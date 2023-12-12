@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: calc(100vw - 325px);
-    height: 50px;
+    min-height: 50px;
     opacity: 0.95;
     background-color: var(--primary-red);
     color: white;
@@ -33,5 +33,24 @@
     }
     100%{
         transform: translate(0%, -65px);
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .error-banner{
+        width: calc(100vw - 375px);
+        box-sizing: content-box;
+        padding: 10px 40px;
+    }
+    .full-width{
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 749px){
+    .error-banner{
+        top: -65px;
+        width: 90vw;
+        z-index: 1000;
     }
 }
