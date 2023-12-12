@@ -1,0 +1,37 @@
+.error-banner{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 325px);
+    height: 50px;
+    opacity: 0.95;
+    background-color: var(--primary-red);
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.slide-out-animation{
+    animation: slide-out;
+    animation-duration: 5s;
+    display: flex;
+}
+
+.full-width{
+    width: 100vw;
+}
+
+@keyframes slide-out{
+    0%{
+        transform: translate(0, 65px);
+    }
+    50%{
+        transform: translate(0%, 65px);
+    }
+    100%{
+        transform: translate(0%, -65px);
+    }
+}
