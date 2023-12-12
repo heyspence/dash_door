@@ -18,7 +18,7 @@ const MenuItemIndexItem = ({id, name, imageUrl, price}) => {
         setIsShowOpen(!isShowOpen)
     }
 
-    const handleAddToCart = async () => {
+    const handleAddToCart = () => {
         if(cartRestaurantId === undefined || cartRestaurantId === menuItemRestaurant?.id){
             let cart_item = {
                 user_id: currentUserId,
