@@ -1,10 +1,29 @@
-.splash-page-main{
+.main-section{
     height: 600px;
-    margin-top: -80px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--primary-black);
+}
+
+.main-section button{
+    width: 137px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.main-section h2{
+    font-size: 34px;
+}
+
+.main-section h3{
+    font-size: 23px;
+}
+
+
+.splash-page-main{
+    margin-top: -80px;
     z-index: 5;
 }
 
@@ -25,4 +44,70 @@
     font-size: 18px;
     position: absolute;
     bottom: -70%;
+}
+
+.splash-page-second{
+    margin: 0 auto;
+    height: 500px;
+}
+
+.splash-page-second > *, .splash-page-third > * {
+    transform: translate(0%, 20%);
+}
+
+.splash-page-second-img{
+    width: 45%;
+    height: auto;
+}
+
+.splash-page-third{
+    background-color: rgb(254, 241, 238);
+}
+
+.main-section-text{
+    width: 30%;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-right: 80px;
+}
+
+.third-section-text{
+    margin-left: 30px;
+    width: 40%;
+    height: 40%;
+    margin-left: 80px;
+}
+
+@media screen and (max-width: 799px){
+    .main-section{
+        flex-direction: column-reverse;
+    }
+
+    .main-section-text, .third-section-text{
+        width: 80%;
+        height: 50%;
+        margin-left: 30px;
+    }
+
+    .splash-page-third{
+        flex-direction: column;
+    }
+
+    .splash-page-second-img{
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 150px;
+        transform: translate(0, -30%);
+    }
+
+    .main-section-text, .third-section-text{
+        transform: translate(0, -4%);
+    }
+
+    .splash-page-third{
+        height: 400px;
+    }
 }
