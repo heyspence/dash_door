@@ -2,7 +2,7 @@ import './Cart.css'
 import { ReactComponent as CloseIcon } from '../../assets/svg/Close.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { getCart, toggleCart } from '../store/cart'
+import { assignCart, getCart, toggleCart } from '../store/cart'
 import CartItem from './CartItem'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { findRestaurantByMenuItem } from '../store/restaurant'
@@ -24,7 +24,12 @@ const Cart = () => {
             dispatch(getCart(currentUserId))
         }
     },[isCartOpen, currentUserId, dispatch])
-    
+
+    useEffect(()=>{
+        dispatch(assignCart(cartRestaurant))
+    },[cartRestaurant])
+
+
     const handleCartClick = (e) => {
         e.stopPropagation();
     }

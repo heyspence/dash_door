@@ -87,7 +87,7 @@
 
     .main-section-text, .third-section-text{
         width: 80%;
-        height: 50%;
+        height: 60%;
         margin-left: 30px;
     }
 
@@ -100,11 +100,11 @@
         object-fit: cover;
         object-position: center;
         height: 150px;
-        transform: translate(0, -30%);
+        transform: translate(0, -11%);
     }
 
     .main-section-text, .third-section-text{
-        transform: translate(0, -4%);
+        transform: translate(0, -1%);
     }
 
     .splash-page-third{

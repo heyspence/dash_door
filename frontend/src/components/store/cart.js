@@ -1,10 +1,13 @@
+import { useSelector } from "react-redux";
 import csrfFetch from "./csrf";
+import { findRestaurantByMenuItem } from "./restaurant";
 
 const RECEIVE_CART_ITEM = 'cart/RECEIVE_CART_ITEM'
 const REMOVE_CART_ITEM = 'cart/REMOVE_CART_ITEM'
 const RECEIVE_CART_ITEMS = 'cart/RECEIVE_CART_ITEMS'
 const REMOVE_CART_ITEMS = 'cart/REMOVE_CART_ITEMS'
 const TOGGLE_CART = 'cart/TOGGLE_CART'
+const ASSIGN_CART = 'cart/ASSIGN_CART'
 
 const receiveCartItem = cartItem => ({
     type: RECEIVE_CART_ITEM,
@@ -27,6 +30,11 @@ export const removeCartItems = () => ({
 
 export const toggleCart = () => ({
     type: TOGGLE_CART
+})
+
+export const assignCart = (restaurant) => ({
+    type: ASSIGN_CART,
+    restaurant
 })
 
 export const deleteCartItems = userId => async dispatch => {
@@ -68,7 +76,7 @@ export const getCart = user_id => async dispatch => {
     }
 }
 
-const cartReducer = (state = { isCartOpen: false, cartItems: {}}, action) => {
+const cartReducer = (state = { isCartOpen: false, cartItems: {}, restaurant: null}, action) => {
     let newState = { ...state }
     switch(action.type){
         case(RECEIVE_CART_ITEM):
@@ -85,6 +93,9 @@ const cartReducer = (state = { isCartOpen: false, cartItems: {}}, action) => {
             return newState
         case(TOGGLE_CART):
             newState.isCartOpen = !state.isCartOpen;
+            return newState
+        case(ASSIGN_CART):
+            newState.restaurant = action.restaurant
             return newState
         default:
             return newState
