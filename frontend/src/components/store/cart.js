@@ -1,6 +1,4 @@
-import { useSelector } from "react-redux";
 import csrfFetch from "./csrf";
-import { findRestaurantByMenuItem } from "./restaurant";
 
 const RECEIVE_CART_ITEM = 'cart/RECEIVE_CART_ITEM'
 const REMOVE_CART_ITEM = 'cart/REMOVE_CART_ITEM'
@@ -70,6 +68,7 @@ export const removeFromCart = cartItemId => async dispatch => {
 export const getCart = user_id => async dispatch => {
     const res = await csrfFetch(`/api/user/${user_id}/cart_items`)
 
+    console.log(res)
     if(res.ok){
         const data = await res.json();
         dispatch(receiveCartItems(data))
