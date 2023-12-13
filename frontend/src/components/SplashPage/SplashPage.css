@@ -73,6 +73,10 @@
     margin-right: 80px;
 }
 
+.main-section-text p{
+    line-height: 23px;
+}
+
 .third-section-text{
     margin-left: 30px;
     width: 40%;
