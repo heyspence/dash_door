@@ -29,7 +29,6 @@ export const fetchMenuItem = menuItemId => async dispatch => {
         dispatch(receiveMenuItem(data))
     }else{
         const data = await res.json()
-        console.log(data)
     }
 }
 
