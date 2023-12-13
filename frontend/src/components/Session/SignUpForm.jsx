@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './SignUpForm.css'
 import { isLoggedIn, signUp } from '../store/session';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';

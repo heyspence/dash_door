@@ -4,12 +4,15 @@ import './SignInForm.css'
 import { signIn, isLoggedIn } from '../store/session';
 import { useHistory } from 'react-router-dom'
 import Errors from './Errors';
-import { ReactComponent as CloseIcon } from '../../assets/svg/Close.svg'
+import { ReactComponent as CloseIcon } from '../../assets/svg/Close.svg';
+import { getCart } from '../store/cart.js';
 
 const SignInForm = ({ onClose }) => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const userLoggedIn = useSelector(isLoggedIn)
+    const userLoggedIn = useSelector(isLoggedIn);
+    const userId = useSelector(state => state.session?.user ? state.session.user.id : null)
+    const state = useSelector(state => state);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -27,16 +30,22 @@ const SignInForm = ({ onClose }) => {
             email,
             password
         }
-        dispatch(signIn(user))
+        dispatch(signIn(user)).then(()=>{
+            if(userId){
+                return dispatch(getCart(userId))
+            }
+        })
     }
 
-    const signInDemoUser = () =>{
+    const signInDemoUser = async () => {
         let user = {
             email: "demo@dashdoor.com",
             password: "password"
-        }
-        dispatch(signIn(user)).then(onClose())
-    }
+        };
+
+        dispatch(signIn(user));
+        onClose();
+    };
 
     return (
         <div className='sign-in-form'>
